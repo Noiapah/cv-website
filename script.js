@@ -31,3 +31,18 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((section) => observer.observe(section));
+
+const tripToggle = document.querySelector(".trip-toggle");
+const tripLabel = tripToggle.querySelector("strong");
+const tripAura = document.querySelector(".trip-aura");
+
+tripToggle.addEventListener("click", () => {
+  const isActive = document.body.classList.toggle("trip-mode");
+  tripToggle.setAttribute("aria-pressed", String(isActive));
+  tripLabel.textContent = isActive ? "ON" : "OFF";
+});
+
+window.addEventListener("pointermove", (event) => {
+  tripAura.style.setProperty("--aura-x", `${event.clientX}px`);
+  tripAura.style.setProperty("--aura-y", `${event.clientY}px`);
+});

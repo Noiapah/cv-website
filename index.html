@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio and CV of Alex Morgan, a product-minded frontend developer."
+    />
+    <title>Alex Morgan — CV & Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Alex Morgan, home">
+        <span class="brand-mark">AM</span>
+        <span>Alex Morgan</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <a class="header-cta" href="#contact">Let’s talk <span>↗</span></a>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero reveal">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Oslo, Norway · Available for opportunities</p>
+          <h1>I build digital<br />products with <em>purpose.</em></h1>
+          <p class="hero-intro">
+            Product-minded frontend developer turning complex problems into clear,
+            thoughtful experiences people enjoy using.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#work">Explore my work <span>↓</span></a>
+            <button class="text-link" id="print-cv" type="button">Print my CV <span>↗</span></button>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="portrait-card">
+            <div class="portrait-shape shape-one"></div>
+            <div class="portrait-shape shape-two"></div>
+            <div class="portrait-initials">AM</div>
+            <div class="status-card">
+              <span class="status-dot"></span>
+              <p><strong>Currently</strong><br />Crafting useful things</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <span>Frontend development</span>
+          <span>Product thinking</span>
+          <span>Design systems</span>
+        </div>
+      </section>
+
+      <section class="about section reveal" id="about">
+        <div class="section-label"><span>01</span> About</div>
+        <div class="about-content">
+          <h2>Curious by nature.<br />Practical by choice.</h2>
+          <div class="about-copy">
+            <p class="lead">
+              I’m a frontend developer who cares about the details — from the first
+              sketch to the final interaction.
+            </p>
+            <p>
+              Over the past 6 years, I’ve worked with ambitious teams to ship accessible,
+              resilient products. I’m at my best where design, technology, and genuine
+              user needs meet.
+            </p>
+            <div class="stats">
+              <div><strong>6+</strong><span>Years of experience</span></div>
+              <div><strong>24</strong><span>Products shipped</span></div>
+              <div><strong>4</strong><span>Countries worked in</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience section reveal" id="experience">
+        <div class="section-label"><span>02</span> Experience</div>
+        <div class="section-heading-row">
+          <h2>Where I’ve made<br />an impact.</h2>
+          <p>A timeline of teams, products, and lessons that shaped how I work today.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2023 — Now</div>
+            <div class="timeline-role">
+              <h3>Senior Frontend Developer</h3>
+              <p>Northstar Studio · Oslo, Norway</p>
+            </div>
+            <div class="timeline-description">
+              <p>Leading frontend architecture for B2B products used by 50k+ people. Built a shared design system that reduced delivery time by 35%.</p>
+              <div class="tags"><span>React</span><span>TypeScript</span><span>Design systems</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2020 — 2023</div>
+            <div class="timeline-role">
+              <h3>Frontend Developer</h3>
+              <p>Bright Labs · Copenhagen, Denmark</p>
+            </div>
+            <div class="timeline-description">
+              <p>Shipped consumer-facing experiences across fintech and climate tech. Partnered closely with designers to turn prototypes into polished products.</p>
+              <div class="tags"><span>Vue</span><span>JavaScript</span><span>Accessibility</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2018 — 2020</div>
+            <div class="timeline-role">
+              <h3>Junior Web Developer</h3>
+              <p>Form & Function · Amsterdam, NL</p>
+            </div>
+            <div class="timeline-description">
+              <p>Built responsive sites and interactive campaigns for culture and lifestyle brands while learning the value of strong creative collaboration.</p>
+              <div class="tags"><span>HTML & CSS</span><span>JavaScript</span><span>Creative dev</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="work section reveal" id="work">
+        <div class="section-label section-label-light"><span>03</span> Selected work</div>
+        <div class="section-heading-row work-heading">
+          <h2>A few things<br />I’m proud of.</h2>
+          <p>Case studies from recent projects. Replace these with your own work, school projects, or achievements.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-lime">
+            <div class="project-number">01</div>
+            <div class="project-art orbit-art"><span></span><span></span><i>NS</i></div>
+            <div class="project-copy">
+              <p>Product platform · 2025</p>
+              <h3>Northstar Analytics</h3>
+              <span>Frontend lead · Design system</span>
+            </div>
+          </article>
+
+          <article class="project-card project-lilac">
+            <div class="project-number">02</div>
+            <div class="project-art blocks-art"><span></span><span></span><span></span><i>FL</i></div>
+            <div class="project-copy">
+              <p>Climate fintech · 2023</p>
+              <h3>Flow Finance</h3>
+              <span>Frontend development · UX</span>
+            </div>
+          </article>
+
+          <article class="project-card project-peach">
+            <div class="project-number">03</div>
+            <div class="project-art sun-art"><span></span><i>LU</i></div>
+            <div class="project-copy">
+              <p>Wellbeing app · 2022</p>
+              <h3>Luma</h3>
+              <span>Creative development · Motion</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills section reveal">
+        <div class="section-label"><span>04</span> Toolkit</div>
+        <div class="skills-layout">
+          <h2>How I bring ideas<br />to life.</h2>
+          <div class="skill-lists">
+            <div>
+              <h3>Development</h3>
+              <p>JavaScript / TypeScript</p><p>React / Next.js / Vue</p><p>HTML / CSS / Sass</p><p>Node.js / REST APIs</p><p>Git / CI/CD / Testing</p>
+            </div>
+            <div>
+              <h3>Product & design</h3>
+              <p>Design systems</p><p>Rapid prototyping</p><p>Accessibility</p><p>Performance</p><p>Figma</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section reveal" id="contact">
+        <p class="eyebrow"><span></span> Have a project or opportunity?</p>
+        <h2>Let’s make something<br /><em>worthwhile.</em></h2>
+        <a class="contact-email" href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev <span>↗</span></a>
+        <div class="contact-footer">
+          <p>Alex Morgan<br /><span>Frontend developer · Oslo</span></p>
+          <div class="socials">
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+          <button class="back-to-top" type="button">Back to top ↑</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -17,16 +17,24 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="experimental.css" />
   </head>
-  <body class="trip-mode">
+  <body class="trip-mode notice-open">
     <div class="noise" aria-hidden="true"></div>
     <div class="trip-aura" aria-hidden="true"></div>
-    <button class="trip-toggle" type="button" aria-pressed="true">
+    <div class="site-notice" role="dialog" aria-modal="true" aria-labelledby="site-notice-title" aria-describedby="site-notice-text">
+      <div class="site-notice-panel">
+        <span class="site-notice-kicker">Prototype warning</span>
+        <h2 id="site-notice-title">No real data is added to this site yet.</h2>
+        <p id="site-notice-text">This is currently a visual mock-up. Names, experience, projects, and contact details are placeholders.</p>
+        <button id="accept-notice" type="button">I understand <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+    <button class="trip-toggle" type="button" aria-pressed="true" inert>
       <span class="trip-toggle-light"></span>
       <span class="trip-toggle-label">Pulse</span>
       <strong>ON</strong>
     </button>
 
-    <header class="site-header">
+    <header class="site-header" inert>
       <a class="brand" href="#top" aria-label="Alex Morgan, home">
         <span class="brand-mark">AM</span>
         <span>Alex Morgan</span>
@@ -54,7 +62,7 @@
       </nav>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1" inert>
       <section class="hero reveal">
         <div class="hero-copy">
           <p class="eyebrow"><span></span> Oslo, Norway · Available for opportunities</p>

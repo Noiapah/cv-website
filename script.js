@@ -147,12 +147,13 @@ function stopPulseEffects() {
 function updateScrollEffects() {
   if (!document.body.classList.contains("trip-mode")) return;
   const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const strength = window.innerWidth < 700 ? .55 : 1;
   scrollProgress = Math.min(window.scrollY / scrollable, 1);
   document.documentElement.style.setProperty("--scroll-y", `${-scrollProgress * 24}vh`);
   document.documentElement.style.setProperty("--scroll-rotate", `${scrollProgress * 155}deg`);
   document.documentElement.style.setProperty("--scroll-hue", `${scrollProgress * 190}deg`);
   distortionNoise.setAttribute("baseFrequency", `${(.008 + scrollProgress * .006).toFixed(4)} ${(.016 + scrollProgress * .01).toFixed(4)}`);
-  distortionTarget = Math.max(distortionTarget, 2.5 + scrollProgress * 3);
+  distortionTarget = Math.max(distortionTarget, (2.5 + scrollProgress * 3) * strength);
 }
 
 tripToggle.addEventListener("click", () => {
@@ -173,7 +174,8 @@ window.addEventListener("pointermove", (event) => {
     const now = performance.now();
     const elapsed = Math.max(now - lastPointer.time, 16);
     const velocity = Math.hypot(event.clientX - lastPointer.x, event.clientY - lastPointer.y) / elapsed;
-    distortionTarget = Math.min(15, Math.max(distortionTarget, velocity * 18));
+    const strength = window.innerWidth < 700 ? .5 : 1;
+    distortionTarget = Math.min(15 * strength, Math.max(distortionTarget, velocity * 18 * strength));
     lastPointer = { x: event.clientX, y: event.clientY, time: now };
   }
 });

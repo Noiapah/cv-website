@@ -199,9 +199,15 @@ main { position: relative; z-index: 2; }
 @keyframes trip-blink { 50% { opacity: .3; transform: scale(.7); } }
 
 @media (max-width: 700px) {
-  .trip-toggle { right: 14px; bottom: 14px; }
+  .trip-toggle {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    min-height: 42px;
+  }
   .trip-toggle-label { display: none; }
   .trip-mode .hero-copy { animation-name: trip-breathe-mobile; }
+  .trip-mode .particle-field { opacity: .65; }
+  .trip-mode .scroll-wash { opacity: .52; }
   @keyframes trip-breathe-mobile { 0%,100% { transform: scale(1); } 50% { transform: scale(1.008,1.015); } }
 }
 

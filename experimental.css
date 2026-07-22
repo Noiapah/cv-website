@@ -43,6 +43,39 @@
 }
 .trip-mode .trip-aura { opacity: 1; }
 
+.particle-field,
+.scroll-wash {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+.particle-field { z-index: 1; mix-blend-mode: screen; }
+.scroll-wash {
+  inset: -35%;
+  z-index: 0;
+  width: 170%;
+  height: 170%;
+  background:
+    conic-gradient(from 40deg, transparent 0 12%, rgba(255,38,212,.18) 20%, transparent 34% 52%, rgba(0,238,255,.2) 63%, transparent 78%),
+    radial-gradient(ellipse at 25% 35%, rgba(173,34,255,.3), transparent 34%),
+    radial-gradient(ellipse at 78% 66%, rgba(36,83,255,.3), transparent 30%);
+  transform: translate3d(0, var(--scroll-y, 0), 0) rotate(var(--scroll-rotate, 0deg));
+  filter: hue-rotate(var(--scroll-hue, 0deg)) saturate(1.35);
+  mix-blend-mode: screen;
+  transition: opacity .6s ease, filter .25s linear;
+}
+.effect-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.trip-mode .particle-field { opacity: .88; }
+.trip-mode .scroll-wash { opacity: .7; }
+.trip-mode h1,
+.trip-mode .section h2 { filter: url("#text-warp"); }
+
+main { position: relative; z-index: 2; }
+
 .trip-mode {
   animation: trip-background 16s ease-in-out infinite alternate;
 }
@@ -174,10 +207,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .trip-mode *, .trip-mode *::before, .trip-mode *::after { animation: none !important; }
-  .trip-aura { display: none; }
+  .trip-aura, .particle-field, .scroll-wash { display: none; }
+  .trip-mode h1, .trip-mode .section h2 { filter: none; }
 }
 
 @media print {
-  .trip-toggle, .trip-aura { display: none !important; }
+  .trip-toggle, .trip-aura, .particle-field, .scroll-wash, .effect-definitions { display: none !important; }
   .trip-mode *, .trip-mode *::before, .trip-mode *::after { animation: none !important; }
 }

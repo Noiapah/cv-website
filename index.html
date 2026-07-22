@@ -20,6 +20,16 @@
   <body class="notice-open">
     <div class="noise" aria-hidden="true"></div>
     <div class="trip-aura" aria-hidden="true"></div>
+    <div class="scroll-wash" aria-hidden="true"></div>
+    <canvas class="particle-field" aria-hidden="true"></canvas>
+    <svg class="effect-definitions" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="text-warp" x="-15%" y="-25%" width="130%" height="150%">
+          <feTurbulence id="text-warp-noise" type="fractalNoise" baseFrequency="0.009 0.018" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap id="text-warp-map" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" />
+        </filter>
+      </defs>
+    </svg>
     <div class="site-notice" role="dialog" aria-modal="true" aria-labelledby="site-notice-title" aria-describedby="site-notice-text">
       <div class="site-notice-panel">
         <span class="site-notice-kicker">Prototype warning</span>

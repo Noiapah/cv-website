@@ -55,6 +55,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let particles = [];
 let particleFrame = 0;
+let scrollFrame = 0;
 let distortionTarget = 0;
 let scrollProgress = 0;
 let lastPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2, time: performance.now() };
@@ -137,7 +138,9 @@ function startPulseEffects() {
 
 function stopPulseEffects() {
   cancelAnimationFrame(particleFrame);
+  cancelAnimationFrame(scrollFrame);
   particleFrame = 0;
+  scrollFrame = 0;
   particles = [];
   particleContext.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
   distortionTarget = 0;
@@ -149,11 +152,18 @@ function updateScrollEffects() {
   const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
   const strength = window.innerWidth < 700 ? .55 : 1;
   scrollProgress = Math.min(window.scrollY / scrollable, 1);
-  document.documentElement.style.setProperty("--scroll-y", `${-scrollProgress * 24}vh`);
-  document.documentElement.style.setProperty("--scroll-rotate", `${scrollProgress * 155}deg`);
-  document.documentElement.style.setProperty("--scroll-hue", `${scrollProgress * 190}deg`);
+  document.documentElement.style.setProperty("--scroll-y", `${-scrollProgress * 10}vh`);
+  document.documentElement.style.setProperty("--scroll-hue", `${scrollProgress * 78}deg`);
   distortionNoise.setAttribute("baseFrequency", `${(.008 + scrollProgress * .006).toFixed(4)} ${(.016 + scrollProgress * .01).toFixed(4)}`);
   distortionTarget = Math.max(distortionTarget, (2.5 + scrollProgress * 3) * strength);
+}
+
+function requestScrollUpdate() {
+  if (scrollFrame || !document.body.classList.contains("trip-mode")) return;
+  scrollFrame = requestAnimationFrame(() => {
+    scrollFrame = 0;
+    updateScrollEffects();
+  });
 }
 
 tripToggle.addEventListener("click", () => {
@@ -187,7 +197,7 @@ window.addEventListener("pointerleave", () => {
 window.addEventListener("resize", () => {
   if (document.body.classList.contains("trip-mode")) resizeParticleField();
 });
-window.addEventListener("scroll", updateScrollEffects, { passive: true });
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
 reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) stopPulseEffects();
   else if (document.body.classList.contains("trip-mode")) startPulseEffects();

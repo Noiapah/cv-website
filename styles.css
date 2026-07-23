@@ -178,7 +178,8 @@ h1 em, .contact h2 em {
 .hero-foot span:not(:last-child)::after { content: "·"; margin-left: 24px; }
 
 .energy-ticker { width: 100%; overflow: hidden; border-block: 2px solid var(--acid); background: var(--acid); color: #080615; transform: rotate(-1.2deg) scale(1.02); box-shadow: 0 0 34px rgba(183,255,37,.28); }
-.ticker-track { width: max-content; display: flex; align-items: center; gap: 34px; padding: 15px 0; font: 800 17px "Manrope", sans-serif; letter-spacing: .1em; animation: ticker-run 18s linear infinite; }
+.ticker-track { --ticker-gap: 34px; --ticker-shift: 17px; width: max-content; display: flex; align-items: center; gap: var(--ticker-gap); padding: 15px 0; font: 800 17px "Manrope", sans-serif; letter-spacing: .1em; animation: ticker-run 18s linear infinite; will-change: transform; }
+.ticker-group { display: flex; align-items: center; gap: var(--ticker-gap); flex-shrink: 0; }
 .ticker-track i { font-style: normal; }
 
 .section { padding-block: 140px; }
@@ -253,7 +254,7 @@ h2 { font-size: clamp(52px, 6.3vw, 96px); }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-@keyframes ticker-run { to { transform: translateX(-50%); } }
+@keyframes ticker-run { to { transform: translateX(calc(-50% - var(--ticker-shift))); } }
 @keyframes glow-drift { to { transform: translate(12vw, 8vh) scale(1.18); } }
 
 @media (max-width: 900px) {
@@ -343,7 +344,7 @@ h2 { font-size: clamp(52px, 6.3vw, 96px); }
   .hero-foot span:not(:last-child)::after { display: none; }
   .hero-foot { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; font-size: 8px; line-height: 1.4; }
   .energy-ticker { transform: rotate(-1.6deg) scale(1.04); }
-  .ticker-track { padding: 12px 0; font-size: 13px; gap: 24px; }
+  .ticker-track { --ticker-gap: 24px; --ticker-shift: 12px; padding: 12px 0; font-size: 13px; }
 
   .section { width: calc(100% - 32px); padding-block: 78px; }
   .section-label { margin-bottom: 42px; font-size: 10px; gap: 14px; }

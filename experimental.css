@@ -132,10 +132,6 @@ main { position: relative; z-index: 2; }
   animation: trip-float 3.6s ease-in-out infinite;
 }
 
-.trip-mode .energy-ticker {
-  animation: trip-ticker-breathe 4s ease-in-out infinite;
-}
-
 .trip-mode .section h2 {
   transform-origin: left center;
   animation: trip-heading 8s ease-in-out infinite;
@@ -190,7 +186,6 @@ main { position: relative; z-index: 2; }
 @keyframes trip-head { to { transform: translate(8px,-10px) scale(1.08) rotate(-7deg); clip-path: polygon(10% 4%,92% 0,95% 73%,65% 96%,12% 100%,3% 22%); } }
 @keyframes trip-initials { 0%,100% { transform: translate(0) scale(1); } 50% { transform: translate(5px,-7px) scale(1.08); } }
 @keyframes trip-float { 0%,100% { transform: translate(0); } 50% { transform: translate(7px,-13px); } }
-@keyframes trip-ticker-breathe { 0%,100% { filter: hue-rotate(0deg); } 50% { filter: hue-rotate(55deg) saturate(1.7); } }
 @keyframes trip-heading { 0%,100% { transform: scale(1); letter-spacing: -.06em; } 50% { transform: scale(1.012,1.035); letter-spacing: -.048em; } }
 @keyframes trip-number { to { transform: scale(1.12) skewX(-5deg); filter: hue-rotate(70deg); } }
 @keyframes trip-art { 0%,100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.08,1.12) rotate(3deg); } }

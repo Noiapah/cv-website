@@ -190,6 +190,13 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   align-items: start; margin-bottom: 70px;
 }
 .section-top h2 { margin: 0; }
+.experience .section-top {
+  margin-inline: -32px;
+  padding: 42px 32px;
+  color: var(--ink);
+  background: var(--acid);
+}
+.experience .section-index { color: var(--ink); }
 .experience-grid { border-top: 1px solid var(--ink); }
 .experience-card {
   display: grid; grid-template-columns: .55fr 1.45fr; gap: 4vw;
@@ -201,8 +208,6 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .experience-card p:not(.card-date) { max-width: 450px; margin: 0; color: var(--muted); font-size: 14px; }
 .text-button { align-self: start; white-space: nowrap; }
 .text-button span { margin-left: 18px; }
-.featured-card { background: var(--acid); margin-inline: -32px; padding-inline: 32px; border-color: var(--ink); }
-
 .toolkit { width: 100%; padding-inline: max(32px, calc((100% - 1480px) / 2)); color: var(--white); background: var(--blue); }
 .toolkit .section-index { color: var(--acid); }
 .tool-groups { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.45); }
@@ -233,6 +238,10 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .detail-dialog::backdrop { background: rgba(12,15,14,.78); backdrop-filter: blur(8px); }
 .detail-dialog h2 { max-width: 800px; margin: 22px 0 54px; font-size: clamp(44px, 6vw, 76px); }
 .dialog-kicker { color: var(--acid); }
+.dialog-intro {
+  max-width: 760px; margin: -28px 0 50px; color: #d5d9d6;
+  font-size: clamp(16px, 1.5vw, 20px); line-height: 1.65;
+}
 .dialog-close {
   position: absolute; right: 22px; top: 18px; width: 42px; height: 42px;
   color: var(--white); background: transparent; border: 1px solid #565c59;
@@ -311,7 +320,7 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .section-top { grid-template-columns: 1fr; }
   .experience-card { grid-template-columns: 1fr; gap: 22px; }
   .experience-card > div { grid-template-columns: 1fr; gap: 18px; }
-  .featured-card { margin-inline: -16px; padding-inline: 16px; }
+  .experience .section-top { margin-inline: -16px; padding: 32px 16px; }
   .tool-groups { grid-template-columns: 1fr; }
   .tool-groups > div { min-height: auto; padding: 28px 0; border-right: 0; }
   .tool-groups h3 { margin-top: 44px; }

@@ -14,7 +14,12 @@ Then visit `http://localhost:8000`.
 
 ## Customize
 
-Replace the mock name, biography, work history, project descriptions, contact details, and links in `index.html`. Colors and typography are controlled at the top of `styles.css`.
+Content and links are maintained in `index.html`. Colors, typography, and layout
+tokens are defined at the top of `styles.css`. Interactive navigation and dialogs
+are handled by `script.js`.
+
+The downloadable bachelor report is stored in `assets/`. Keep its filename stable
+unless the two report links in `index.html` are updated at the same time.
 
 ## Publish with GitHub Pages
 

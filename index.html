@@ -49,9 +49,9 @@
       </nav>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero" id="top">
-        <div class="hero-copy reveal">
+        <div class="hero-copy">
           <p class="eyebrow"><span></span> Oslo · Computer Engineering, OsloMet</p>
           <h1>Engineering<br />that makes<br /><em>sense.</em></h1>
           <p class="hero-intro">
@@ -60,11 +60,11 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#project">See selected work <span>↓</span></a>
-            <a class="button button-quiet" href="mailto:noiapah@protonmail.com">Email me <span>↗</span></a>
+            <a class="button" href="mailto:noiapah@protonmail.com">Email me <span>↗</span></a>
           </div>
         </div>
 
-        <div class="signal-bar reveal" aria-label="Core strengths">
+        <div class="signal-bar" aria-label="Core strengths">
           <span>01 <strong>Full-stack</strong></span>
           <span>02 <strong>Cloud &amp; DevOps</strong></span>
           <span>03 <strong>Security mindset</strong></span>
@@ -72,7 +72,7 @@
         </div>
       </section>
 
-      <section class="intro section reveal" aria-labelledby="intro-title">
+      <section class="intro section" aria-labelledby="intro-title">
         <p class="section-index">/ Profile</p>
         <div>
           <h2 id="intro-title">Technical depth.<br />Human clarity.</h2>
@@ -90,12 +90,12 @@
       </section>
 
       <section class="project section" id="project" aria-labelledby="project-title">
-        <div class="project-head reveal">
+        <div class="project-head">
           <p class="section-index">/ Selected project</p>
           <p class="project-meta">Bachelor project <span>·</span> External client <span>·</span> 2026</p>
         </div>
 
-        <article class="project-feature reveal">
+        <article class="project-feature">
           <div class="project-copy">
             <span class="client-chip">Built for Signicat</span>
             <h2 id="project-title">ReuseID<br />Demo</h2>
@@ -107,7 +107,13 @@
               <span>Vue 3</span><span>TypeScript</span><span>Spring Boot</span><span>Kubernetes</span>
             </div>
             <div class="project-actions">
-              <button class="case-link" type="button" data-dialog="project-dialog">
+              <button
+                class="case-link"
+                type="button"
+                data-dialog="project-dialog"
+                aria-haspopup="dialog"
+                aria-controls="project-dialog"
+              >
                 Explore the case study <span aria-hidden="true">↗</span>
               </button>
               <a
@@ -137,7 +143,7 @@
         </article>
       </section>
 
-      <section class="experience section reveal" id="experience" aria-labelledby="experience-title">
+      <section class="experience section" id="experience" aria-labelledby="experience-title">
         <div class="section-top">
           <p class="section-index">/ Experience</p>
           <h2 id="experience-title">Built in the real world.</h2>
@@ -153,7 +159,14 @@
                 Technical guidance, consultative sales, problem-solving, and smooth
                 day-to-day operations across several Oslo-area stores.
               </p>
-              <button class="text-button" type="button" data-dialog="telenor-dialog">
+              <button
+                class="text-button"
+                type="button"
+                data-dialog="telenor-dialog"
+                aria-haspopup="dialog"
+                aria-controls="telenor-dialog"
+                aria-label="View Telenor experience details"
+              >
                 View details <span aria-hidden="true">+</span>
               </button>
             </div>
@@ -165,7 +178,14 @@
               <span class="card-kicker">OsloMet</span>
               <h3>BSc Computer Engineering</h3>
               <p>Software, systems, security, networking, data, and cloud foundations.</p>
-              <button class="text-button" type="button" data-dialog="education-dialog">
+              <button
+                class="text-button"
+                type="button"
+                data-dialog="education-dialog"
+                aria-haspopup="dialog"
+                aria-controls="education-dialog"
+                aria-label="View computer engineering curriculum"
+              >
                 View curriculum <span aria-hidden="true">+</span>
               </button>
             </div>
@@ -185,7 +205,7 @@
         </div>
       </section>
 
-      <section class="toolkit section reveal" id="toolkit" aria-labelledby="toolkit-title">
+      <section class="toolkit section" id="toolkit" aria-labelledby="toolkit-title">
         <div class="section-top">
           <p class="section-index">/ Toolkit</p>
           <h2 id="toolkit-title">From interface<br />to infrastructure.</h2>
@@ -215,7 +235,7 @@
         </div>
       </section>
 
-      <section class="contact section reveal" id="contact" aria-labelledby="contact-title">
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
         <p class="section-index">/ Contact</p>
         <div class="contact-main">
           <p>Have a role, project, or problem worth solving?</p>

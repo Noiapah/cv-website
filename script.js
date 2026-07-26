@@ -1,19 +1,32 @@
 const menuButton = document.querySelector(".menu-button");
+const menuLabel = menuButton?.querySelector(".sr-only");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
 const dialogTriggers = document.querySelectorAll("[data-dialog]");
 const dialogs = document.querySelectorAll("dialog");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-function closeMenu() {
-  document.body.classList.remove("menu-open");
-  menuButton?.setAttribute("aria-expanded", "false");
+function setMenuState(isOpen) {
+  document.body.classList.toggle("menu-open", isOpen);
+  menuButton?.setAttribute("aria-expanded", String(isOpen));
+  if (menuLabel) menuLabel.textContent = isOpen ? "Close navigation" : "Open navigation";
 }
 
 menuButton?.addEventListener("click", () => {
-  const isOpen = document.body.classList.toggle("menu-open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
+  setMenuState(!document.body.classList.contains("menu-open"));
 });
 
-mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+mobileLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && document.body.classList.contains("menu-open")) {
+    setMenuState(false);
+    menuButton?.focus();
+  }
+});
+
+window.matchMedia("(min-width: 981px)").addEventListener("change", (event) => {
+  if (event.matches) setMenuState(false);
+});
 
 dialogTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
@@ -39,7 +52,7 @@ dialogs.forEach((dialog) => {
 });
 
 document.querySelector(".back-to-top")?.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: reducedMotion.matches ? "auto" : "smooth" });
 });
 
 const year = document.querySelector("#year");

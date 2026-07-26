@@ -37,7 +37,8 @@
       </a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
         <span class="sr-only">Open navigation</span>
       </button>
 
@@ -52,11 +53,13 @@
     <main id="main" tabindex="-1">
       <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Oslo · Computer Engineering, OsloMet</p>
+          <p class="eyebrow">
+            <span aria-hidden="true"></span>
+            Oslo · Computer Engineering, OsloMet
+          </p>
           <h1>Engineering<br />that makes<br /><em>sense.</em></h1>
           <p class="hero-intro">
-            I’m Noah — a full-stack developer who turns complex systems into secure,
-            understandable products.
+            I’m Noah — a full-stack developer who turns complex problems into understandable solutions.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#project">See selected work <span>↓</span></a>
@@ -80,11 +83,10 @@
         <div class="intro-copy">
           <p>
             My background combines computer engineering with five years of customer-facing
-            technology work.
+            technology support work.
           </p>
           <p>
-            That means I’m as comfortable tracing an API problem as I am explaining the
-            solution to someone without a technical background.
+            That means I'm comfortable tracing the problem, explaining the issue while building a solution for someone without a technical background.
           </p>
         </div>
       </section>
@@ -104,7 +106,10 @@
               mobile authentication easy to understand.
             </p>
             <div class="project-tags" aria-label="Key technologies">
-              <span>Vue 3</span><span>TypeScript</span><span>Spring Boot</span><span>Kubernetes</span>
+              <span>Vue 3</span>
+              <span>TypeScript</span>
+              <span>Spring Boot</span>
+              <span>Kubernetes</span>
             </div>
             <div class="project-actions">
               <button
@@ -127,7 +132,14 @@
           </div>
 
           <div class="project-window" aria-hidden="true">
-            <div class="window-bar"><i></i><i></i><i></i><span>reuse-id / overview</span></div>
+            <div class="window-bar">
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span>reuse-id / overview</span>
+            </div>
             <div class="window-body">
               <div class="bank-card">
                 <span class="bank-label">IDENTITY STATUS</span>
@@ -135,9 +147,18 @@
                 <div class="identity-mark">ID</div>
               </div>
               <div class="flow">
-                <span>User</span><i>→</i><span>ReuseID</span><i>→</i><span>Bank</span>
+                <span>User</span>
+                <span class="flow-arrow">→</span>
+                <span>ReuseID</span>
+                <span class="flow-arrow">→</span>
+                <span>Bank</span>
               </div>
-              <div class="code-lines"><i></i><i></i><i></i><i></i></div>
+              <div class="code-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </article>
@@ -146,7 +167,7 @@
       <section class="experience section" id="experience" aria-labelledby="experience-title">
         <div class="section-top">
           <p class="section-index">/ Experience</p>
-          <h2 id="experience-title">Built in the real world.</h2>
+          <h2 id="experience-title">Solving real issues when it matters most.</h2>
         </div>
 
         <div class="experience-grid">
@@ -359,10 +380,34 @@
       <p class="dialog-kicker">OsloMet · BSc Computer Engineering</p>
       <h2 id="education-dialog-title">A broad engineering foundation.</h2>
       <div class="dialog-grid">
-        <div><h3>Software</h3><p>Java, JavaScript, C, web programming, algorithms, data structures, system development, testing, and APIs.</p></div>
-        <div><h3>Systems</h3><p>Linux, operating systems, threading, assembly, CPU architecture, networks, protocols, and Wireshark.</p></div>
-        <div><h3>Data &amp; security</h3><p>Database design, MySQL, MongoDB, encryption, hashing, zero-trust principles, AI, and data analysis.</p></div>
-        <div><h3>Delivery</h3><p>Agile and Scrum workflows, DevOps, roadmapping, project planning, GDPR, licensing, and system architecture.</p></div>
+        <div>
+          <h3>Software</h3>
+          <p>
+            Java, JavaScript, C, web programming, algorithms, data structures, system
+            development, testing, and APIs.
+          </p>
+        </div>
+        <div>
+          <h3>Systems</h3>
+          <p>
+            Linux, operating systems, threading, assembly, CPU architecture, networks,
+            protocols, and Wireshark.
+          </p>
+        </div>
+        <div>
+          <h3>Data &amp; security</h3>
+          <p>
+            Database design, MySQL, MongoDB, encryption, hashing, zero-trust principles, AI,
+            and data analysis.
+          </p>
+        </div>
+        <div>
+          <h3>Delivery</h3>
+          <p>
+            Agile and Scrum workflows, DevOps, roadmapping, project planning, GDPR,
+            licensing, and system architecture.
+          </p>
+        </div>
       </div>
     </dialog>
 

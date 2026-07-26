@@ -163,9 +163,10 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   height: 48px; display: flex; align-items: center; gap: 7px; padding: 0 15px;
   border-bottom: 1px solid #424745; color: #8d9490; font: 400 9px "DM Mono";
 }
-.window-bar i { width: 8px; height: 8px; background: #59605c; border-radius: 50%; }
-.window-bar i:first-child { background: var(--orange); }
-.window-bar span { margin-left: auto; }
+.window-dots { display: flex; gap: 7px; }
+.window-dots span { width: 8px; height: 8px; background: #59605c; border-radius: 50%; }
+.window-dots span:first-child { background: var(--orange); }
+.window-bar > span { margin-left: auto; }
 .window-body {
   position: relative; min-height: 480px; padding: 48px;
   background:
@@ -190,12 +191,12 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   width: 90%; margin: 46px 0 0 auto; font: 400 10px "DM Mono";
 }
 .flow span { padding: 10px; border: 1px solid #59605c; background: #202524; }
-.flow i { color: var(--acid); font-style: normal; }
+.flow-arrow { color: var(--acid); }
 .code-lines { position: absolute; right: 30px; top: 72px; width: 28%; }
-.code-lines i { display: block; height: 5px; margin-bottom: 12px; background: var(--blue); }
-.code-lines i:nth-child(2) { width: 70%; background: var(--orange); }
-.code-lines i:nth-child(3) { width: 88%; }
-.code-lines i:nth-child(4) { width: 55%; background: var(--acid); }
+.code-lines span { display: block; height: 5px; margin-bottom: 12px; background: var(--blue); }
+.code-lines span:nth-child(2) { width: 70%; background: var(--orange); }
+.code-lines span:nth-child(3) { width: 88%; }
+.code-lines span:nth-child(4) { width: 55%; background: var(--acid); }
 
 .section-top {
   display: grid; grid-template-columns: .55fr 1.95fr; gap: 4vw;

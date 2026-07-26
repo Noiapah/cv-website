@@ -73,7 +73,8 @@ main { overflow: hidden; }
 .hero {
   min-height: calc(100vh - 88px);
   min-height: calc(100svh - 88px);
-  display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: clamp(64px, 9vh, 110px) 0 32px;
 }
 .hero-copy { align-self: center; position: relative; z-index: 2; }
@@ -100,13 +101,6 @@ h1 em, .contact h2 em {
 }
 .button:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink); }
 .button-primary { background: var(--acid); }
-
-.signal-bar {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--ink);
-}
-.signal-bar span { display: flex; gap: 13px; color: var(--muted); font: 400 10px "DM Mono"; }
-.signal-bar strong { color: var(--ink); font-weight: 500; text-transform: uppercase; }
 
 .section { padding-block: clamp(92px, 11vw, 170px); }
 .intro {
@@ -221,20 +215,86 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .experience-card p:not(.card-date) { max-width: 450px; margin: 0; color: var(--muted); font-size: 14px; }
 .text-button { align-self: start; white-space: nowrap; }
 .text-button span { margin-left: 18px; }
-.toolkit {
+.capabilities {
   width: 100%;
   padding-inline: max(var(--gutter), calc((100% - var(--content-width)) / 2));
   color: var(--white);
   background: var(--blue);
 }
-.toolkit .section-index { color: var(--acid); }
-.tool-groups { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.45); }
-.tool-groups > div { min-height: 280px; padding: 28px; border-right: 1px solid rgba(255,255,255,.45); }
-.tool-groups > div:first-child { padding-left: 0; }
-.tool-groups > div:last-child { border-right: 0; }
-.tool-number { color: var(--acid); font: 500 10px "DM Mono"; }
-.tool-groups h3 { margin: 80px 0 16px; font-size: 25px; }
-.tool-groups p { color: #d8ddff; font-size: 14px; }
+.capabilities .section-index { color: var(--acid); }
+.capability-explorer {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  border-top: 1px solid rgba(255,255,255,.45);
+}
+.capability-tabs {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255,255,255,.45);
+}
+.capability-tab {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  color: #d8ddff;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+  cursor: pointer;
+  font-size: clamp(18px, 1.7vw, 25px);
+  font-weight: 600;
+  text-align: left;
+  transition: color .2s, background .2s;
+}
+.capability-tab span {
+  color: var(--acid);
+  font: 500 10px "DM Mono", monospace;
+}
+.capability-tab:hover { color: var(--white); }
+.capability-tab[aria-selected="true"] {
+  color: var(--ink);
+  background: var(--acid);
+}
+.capability-tab[aria-selected="true"] span { color: var(--ink); }
+.capability-panels { min-width: 0; }
+.capability-panel {
+  min-height: 420px;
+  padding: clamp(38px, 5vw, 72px);
+}
+.capability-panel[hidden] { display: none; }
+.capability-label {
+  margin-bottom: 42px;
+  color: var(--acid);
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.capability-panel h3 {
+  margin-bottom: 20px;
+  font-size: clamp(36px, 4vw, 60px);
+  letter-spacing: -.05em;
+}
+.capability-panel > p:not(.capability-label) {
+  max-width: 650px;
+  color: #d8ddff;
+  font-size: clamp(15px, 1.3vw, 18px);
+}
+.capability-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.capability-keywords li {
+  padding: 8px 11px;
+  color: var(--ink);
+  background: var(--white);
+  font: 500 10px "DM Mono", monospace;
+  text-transform: uppercase;
+}
 
 .contact { padding-bottom: 36px; }
 .contact-main { margin: 65px 0 130px 27%; }
@@ -299,8 +359,18 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .project-feature { grid-template-columns: 1fr; }
   .experience-card > div { grid-template-columns: 1fr 1fr; }
   .experience-card .card-kicker { grid-column: 1 / -1; }
-  .tool-groups { grid-template-columns: 1fr 1fr; }
-  .tool-groups > div { border-bottom: 1px solid rgba(255,255,255,.45); }
+  .capability-explorer { grid-template-columns: 1fr; }
+  .capability-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.45);
+  }
+  .capability-tab {
+    flex: 0 0 auto;
+    padding: 18px 20px;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 680px) {
@@ -316,7 +386,6 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .hero-intro { max-width: 100%; font-size: 16px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .button { width: 100%; min-width: 0; }
-  .signal-bar { grid-template-columns: 1fr 1fr; gap: 18px; }
   .intro { grid-template-columns: 1fr; }
   .intro-copy { grid-column: 1; }
   .project-head { grid-template-columns: auto 1fr; gap: 16px; }
@@ -332,9 +401,8 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .experience-card { grid-template-columns: 1fr; gap: 22px; }
   .experience-card > div { grid-template-columns: 1fr; gap: 18px; }
   .experience .section-top { padding-block: 32px; }
-  .tool-groups { grid-template-columns: 1fr; }
-  .tool-groups > div { min-height: auto; padding: 28px 0; border-right: 0; }
-  .tool-groups h3 { margin-top: 44px; }
+  .capability-panel { min-height: 380px; padding: 36px 0; }
+  .capability-label { margin-bottom: 32px; }
   .contact-main { margin: 55px 0 110px; }
   .contact h2 { font-size: 16vw; }
   .contact-main > a { overflow-wrap: anywhere; }
@@ -350,7 +418,20 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 
 @media print {
   .site-header, .hero-actions, .project-window, button { display: none !important; }
-  body, .project, .toolkit { color: #000; background: #fff; }
-  .hero, .section, .project, .toolkit { width: 100%; padding: 30px; }
+  body, .project, .capabilities { color: #000; background: #fff; }
+  .hero, .section, .project, .capabilities { width: 100%; padding: 30px; }
   .hero { display: block; min-height: auto; }
+  .capability-tabs { display: none; }
+  .capability-panel,
+  .capability-panel[hidden] {
+    display: block;
+    min-height: auto;
+    padding: 20px 0;
+    color: #000;
+  }
+  .capability-label,
+  .capability-panel > p:not(.capability-label),
+  .capability-keywords li {
+    color: #000;
+  }
 }

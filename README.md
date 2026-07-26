@@ -17,7 +17,8 @@ The site includes:
 - A featured ReuseID bachelor project
 - A downloadable copy of the complete bachelor report
 - Work, education, and volunteer experience
-- Technical skills covering full-stack development, security, and cloud delivery
+- An interactive capabilities explorer covering frontend, backend, cloud, security,
+  and collaboration
 - Responsive desktop and mobile layouts
 - Keyboard navigation and reduced-motion support
 - Print-friendly styling

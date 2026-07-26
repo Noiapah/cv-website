@@ -3,6 +3,7 @@ const menuLabel = menuButton?.querySelector(".sr-only");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
 const dialogTriggers = document.querySelectorAll("[data-dialog]");
 const dialogs = document.querySelectorAll("dialog");
+const capabilityTabs = [...document.querySelectorAll(".capability-tab")];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function setMenuState(isOpen) {
@@ -49,6 +50,40 @@ dialogs.forEach((dialog) => {
     if (isOutside) dialog.close();
   });
   dialog.addEventListener("close", () => document.body.classList.remove("dialog-open"));
+});
+
+function activateCapability(selectedTab) {
+  capabilityTabs.forEach((tab) => {
+    const isSelected = tab === selectedTab;
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
+
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+    if (panel) panel.hidden = !isSelected;
+  });
+}
+
+capabilityTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateCapability(tab));
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (index + 1) % capabilityTabs.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (index - 1 + capabilityTabs.length) % capabilityTabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = capabilityTabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    activateCapability(capabilityTabs[nextIndex]);
+    capabilityTabs[nextIndex].focus();
+  });
 });
 
 document.querySelector(".back-to-top")?.addEventListener("click", () => {

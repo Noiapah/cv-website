@@ -223,77 +223,33 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 }
 .capabilities .section-index { color: var(--acid); }
 .capability-explorer {
-  display: grid;
-  grid-template-columns: .75fr 1.25fr;
   border-top: 1px solid rgba(255,255,255,.45);
 }
-.capability-tabs {
+.tool-objects {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.tool-object {
   display: flex;
+  min-height: 150px;
   flex-direction: column;
-  border-right: 1px solid rgba(255,255,255,.45);
-}
-.capability-tab {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 22px 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 22px;
   color: #d8ddff;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-  cursor: pointer;
-  font-size: clamp(18px, 1.7vw, 25px);
-  font-weight: 600;
-  text-align: left;
-  transition: color .2s, background .2s;
+  border-right: 1px solid rgba(255,255,255,.35);
 }
-.capability-tab span {
+.tool-object:last-child { border-right: 0; }
+.tool-object span {
   color: var(--acid);
   font: 500 10px "DM Mono", monospace;
 }
-.capability-tab:hover { color: var(--white); }
-.capability-tab[aria-selected="true"] {
-  color: var(--ink);
-  background: var(--acid);
-}
-.capability-tab[aria-selected="true"] span { color: var(--ink); }
-.capability-panels { min-width: 0; }
-.capability-panel {
-  min-height: 420px;
-  padding: clamp(38px, 5vw, 72px);
-}
-.capability-panel[hidden] { display: none; }
-.capability-label {
-  margin-bottom: 42px;
-  color: var(--acid);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.capability-panel h3 {
-  margin-bottom: 20px;
-  font-size: clamp(36px, 4vw, 60px);
-  letter-spacing: -.05em;
-}
-.capability-panel > p:not(.capability-label) {
-  max-width: 650px;
-  color: #d8ddff;
-  font-size: clamp(15px, 1.3vw, 18px);
-}
-.capability-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin: 34px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.capability-keywords li {
-  padding: 8px 11px;
-  color: var(--ink);
-  background: var(--white);
-  font: 500 10px "DM Mono", monospace;
-  text-transform: uppercase;
+.tool-object h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(17px, 1.5vw, 23px);
+  line-height: 1.15;
 }
 
 .contact { padding-bottom: 36px; }
@@ -358,18 +314,10 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .project-feature { grid-template-columns: 1fr; }
   .experience-card > div { grid-template-columns: 1fr 1fr; }
   .experience-card .card-kicker { grid-column: 1 / -1; }
-  .capability-explorer { grid-template-columns: 1fr; }
-  .capability-tabs {
-    flex-direction: row;
-    overflow-x: auto;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,.45);
-  }
-  .capability-tab {
-    flex: 0 0 auto;
-    padding: 18px 20px;
-    white-space: nowrap;
-  }
+  .tool-objects { grid-template-columns: repeat(3, 1fr); }
+  .tool-object { border-bottom: 1px solid rgba(255,255,255,.35); }
+  .tool-object:nth-child(3) { border-right: 0; }
+  .tool-object:last-child { border-right: 0; }
 }
 
 @media (max-width: 680px) {
@@ -400,8 +348,14 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .experience-card { grid-template-columns: 1fr; gap: 22px; }
   .experience-card > div { grid-template-columns: 1fr; gap: 18px; }
   .experience .section-top { padding-block: 32px; }
-  .capability-panel { min-height: 380px; padding: 36px 0; }
-  .capability-label { margin-bottom: 32px; }
+  .tool-objects { grid-template-columns: 1fr 1fr; }
+  .tool-object,
+  .tool-object:nth-child(3) {
+    min-height: 125px;
+    border-right: 1px solid rgba(255,255,255,.35);
+  }
+  .tool-object:nth-child(even) { border-right: 0; }
+  .tool-object:last-child { grid-column: 1 / -1; border-right: 0; }
   .contact-main { margin: 55px 0 110px; }
   .contact h2 { font-size: 16vw; }
   .contact-main > a { overflow-wrap: anywhere; }
@@ -420,17 +374,5 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   body, .project, .capabilities { color: #000; background: #fff; }
   .hero, .section, .project, .capabilities { width: 100%; padding: 30px; }
   .hero { display: block; min-height: auto; }
-  .capability-tabs { display: none; }
-  .capability-panel,
-  .capability-panel[hidden] {
-    display: block;
-    min-height: auto;
-    padding: 20px 0;
-    color: #000;
-  }
-  .capability-label,
-  .capability-panel > p:not(.capability-label),
-  .capability-keywords li {
-    color: #000;
-  }
+  .tool-object h3 { color: #000; }
 }

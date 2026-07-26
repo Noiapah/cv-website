@@ -1,5 +1,4 @@
 const menuButton = document.querySelector(".menu-button");
-const mobileNav = document.querySelector(".mobile-nav");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
 const dialogTriggers = document.querySelectorAll("[data-dialog]");
 const dialogs = document.querySelectorAll("dialog");
@@ -43,21 +42,5 @@ document.querySelector(".back-to-top")?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.08 }
-);
-
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
-}
+const year = document.querySelector("#year");
+if (year) year.textContent = new Date().getFullYear();

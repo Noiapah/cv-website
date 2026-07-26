@@ -2,262 +2,326 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#090719" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f0e8" />
     <meta
       name="description"
-      content="Portfolio and CV of Alex Morgan, a product-minded frontend developer."
+      content="Portfolio of Noah Cornelius Sørli, a computer engineer focused on full-stack development, secure systems, and clear user experiences."
     />
-    <title>Alex Morgan — CV & Portfolio</title>
+    <title>Noah Cornelius Sørli — Computer Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="experimental.css" />
   </head>
-  <body class="notice-open"> 
-    <div class="noise" aria-hidden="true"></div>
-    <div class="trip-aura" aria-hidden="true"></div>
-    <div class="scroll-wash" aria-hidden="true"></div>
-    <canvas class="particle-field" aria-hidden="true"></canvas>
-    <svg class="effect-definitions" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="text-warp" x="-15%" y="-25%" width="130%" height="150%">
-          <feTurbulence id="text-warp-noise" type="fractalNoise" baseFrequency="0.009 0.018" numOctaves="2" seed="7" result="noise" />
-          <feDisplacementMap id="text-warp-map" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" />
-        </filter>
-      </defs>
-    </svg>
-    <div class="site-notice" role="dialog" aria-modal="true" aria-labelledby="site-notice-title" aria-describedby="site-notice-text">
-      <div class="site-notice-panel">
-        <span class="site-notice-kicker">Prototype warning</span>
-        <h2 id="site-notice-title">No real data is added to this site yet.</h2>
-        <p id="site-notice-text">This is currently a visual mock-up. Names, experience, projects, and contact details are placeholders.</p>
-        <button id="accept-notice" type="button">I understand <span aria-hidden="true">→</span></button>
-      </div>
-    </div>
-    <button class="trip-toggle" type="button" aria-pressed="false" inert>
-      <span class="trip-toggle-light"></span>
-      <span class="trip-toggle-label">Pulse</span>
-      <strong>OFF</strong>
-    </button>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" inert>
-      <a class="brand" href="#top" aria-label="Alex Morgan, home">
-        <span class="brand-mark">AM</span>
-        <span>Alex Morgan</span>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Noah Cornelius Sørli, home">
+        <span class="brand-mark">NCS</span>
+        <span class="brand-name">Noah Cornelius Sørli</span>
       </a>
 
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
+        <a href="#project">Project</a>
         <a href="#experience">Experience</a>
-        <a href="#work">Selected work</a>
-        <a href="#contact">Contact</a>
+        <a href="#toolkit">Toolkit</a>
       </nav>
+
+      <a class="header-contact" href="mailto:noiapah@protonmail.com">
+        Let’s talk <span aria-hidden="true">↗</span>
+      </a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span>
         <span class="sr-only">Open navigation</span>
       </button>
 
-      <a class="header-cta" href="#contact">Let’s talk <span>↗</span></a>
-
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-        <a href="#about">About</a>
+        <a href="#project">Project</a>
         <a href="#experience">Experience</a>
-        <a href="#work">Selected work</a>
-        <a href="#contact">Contact</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="mailto:noiapah@protonmail.com">Contact</a>
       </nav>
     </header>
 
-    <main id="top" tabindex="-1" inert>
-      <section class="hero reveal">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> Oslo, Norway · Available for opportunities</p>
-          <h1>I build digital<br />products with <em>purpose.</em></h1>
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Oslo · Computer Engineering, OsloMet</p>
+          <h1>Engineering<br />that makes<br /><em>sense.</em></h1>
           <p class="hero-intro">
-            Product-minded frontend developer turning complex problems into clear,
-            thoughtful experiences people enjoy using.
+            I’m Noah — a full-stack developer who turns complex systems into secure,
+            understandable products.
           </p>
           <div class="hero-actions">
-            <a class="button button-dark" href="#work">Explore my work <span>↓</span></a>
-            <button class="text-link" id="print-cv" type="button">Print my CV <span>↗</span></button>
+            <a class="button button-primary" href="#project">See selected work <span>↓</span></a>
+            <a class="button button-quiet" href="mailto:noiapah@protonmail.com">Email me <span>↗</span></a>
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="portrait-card">
-            <div class="portrait-shape shape-one"></div>
-            <div class="portrait-shape shape-two"></div>
-            <div class="portrait-initials">AM</div>
-            <div class="status-card">
-              <span class="status-dot"></span>
-              <p><strong>Currently</strong><br />Crafting useful things</p>
-            </div>
+        <div class="hero-graphic reveal" aria-hidden="true">
+          <div class="orbital">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="orbit orbit-three"></span>
+            <div class="core">NCS</div>
+            <span class="node node-one"></span>
+            <span class="node node-two"></span>
+          </div>
+          <div class="status-note">
+            <span>Current focus</span>
+            <strong>Secure digital identity</strong>
           </div>
         </div>
 
-        <div class="hero-foot">
-          <span>Frontend development</span>
-          <span>Product thinking</span>
-          <span>Design systems</span>
+        <div class="signal-bar reveal" aria-label="Core strengths">
+          <span>01 <strong>Full-stack</strong></span>
+          <span>02 <strong>Cloud &amp; DevOps</strong></span>
+          <span>03 <strong>Security mindset</strong></span>
+          <span>04 <strong>People skills</strong></span>
         </div>
       </section>
 
-      <div class="energy-ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <div class="ticker-group">
-            <span>BUILD BOLD</span><i>✦</i><span>BREAK PATTERNS</span><i>✦</i><span>SHIP BETTER</span><i>✦</i>
-          </div>
-          <div class="ticker-group">
-            <span>BUILD BOLD</span><i>✦</i><span>BREAK PATTERNS</span><i>✦</i><span>SHIP BETTER</span><i>✦</i>
-          </div>
+      <section class="intro section reveal" aria-labelledby="intro-title">
+        <p class="section-index">/ Profile</p>
+        <div>
+          <h2 id="intro-title">Technical depth.<br />Human clarity.</h2>
         </div>
-      </div>
+        <div class="intro-copy">
+          <p>
+            My background combines computer engineering with five years of customer-facing
+            technology work.
+          </p>
+          <p>
+            That means I’m as comfortable tracing an API problem as I am explaining the
+            solution to someone without a technical background.
+          </p>
+        </div>
+      </section>
 
-      <section class="about section reveal" id="about">
-        <div class="section-label"><span>01</span> About</div>
-        <div class="about-content">
-          <h2>Curious by nature.<br />Practical by choice.</h2>
-          <div class="about-copy">
-            <p class="lead">
-              I’m a frontend developer who cares about the details — from the first
-              sketch to the final interaction.
-            </p>
+      <section class="project section" id="project" aria-labelledby="project-title">
+        <div class="project-head reveal">
+          <p class="section-index">/ Selected project</p>
+          <p class="project-meta">Bachelor project · External client · 2026</p>
+        </div>
+
+        <article class="project-feature reveal">
+          <div class="project-copy">
+            <span class="client-chip">Built for Signicat</span>
+            <h2 id="project-title">ReuseID<br />Demo</h2>
             <p>
-              Over the past 6 years, I’ve worked with ambitious teams to ship accessible,
-              resilient products. I’m at my best where design, technology, and genuine
-              user needs meet.
+              A realistic online-banking demo that makes reusable digital identity and
+              mobile authentication easy to understand.
             </p>
-            <div class="stats">
-              <div><strong>6+</strong><span>Years of experience</span></div>
-              <div><strong>24</strong><span>Products shipped</span></div>
-              <div><strong>4</strong><span>Countries worked in</span></div>
+            <div class="project-tags" aria-label="Key technologies">
+              <span>Vue 3</span><span>TypeScript</span><span>Spring Boot</span><span>Kubernetes</span>
             </div>
+            <button class="case-link" type="button" data-dialog="project-dialog">
+              Explore the case study <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <div class="project-window" aria-hidden="true">
+            <div class="window-bar"><i></i><i></i><i></i><span>reuse-id / overview</span></div>
+            <div class="window-body">
+              <div class="bank-card">
+                <span class="bank-label">IDENTITY STATUS</span>
+                <strong>Verified</strong>
+                <div class="identity-mark">ID</div>
+              </div>
+              <div class="flow">
+                <span>User</span><i>→</i><span>ReuseID</span><i>→</i><span>Bank</span>
+              </div>
+              <div class="code-lines"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="experience section reveal" id="experience" aria-labelledby="experience-title">
+        <div class="section-top">
+          <p class="section-index">/ Experience</p>
+          <h2 id="experience-title">Built in the real world.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card featured-card">
+            <p class="card-date">2021 — Present</p>
+            <div>
+              <span class="card-kicker">Telenor retail · Connect / Så&amp;Høste</span>
+              <h3>Sales, support &amp;<br />store operations</h3>
+              <p>
+                Technical guidance, consultative sales, problem-solving, and smooth
+                day-to-day operations across several Oslo-area stores.
+              </p>
+              <button class="text-button" type="button" data-dialog="telenor-dialog">
+                View details <span aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <p class="card-date">2022 — 2026</p>
+            <div>
+              <span class="card-kicker">OsloMet</span>
+              <h3>BSc Computer Engineering</h3>
+              <p>Software, systems, security, networking, data, and cloud foundations.</p>
+              <button class="text-button" type="button" data-dialog="education-dialog">
+                View curriculum <span aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <p class="card-date">2023 + 2024</p>
+            <div>
+              <span class="card-kicker">Student volunteering</span>
+              <h3>OsloMet Fadder</h3>
+              <p>
+                Helped create a welcoming student start. The group won TKD’s best fadder
+                group in 2024.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="toolkit section reveal" id="toolkit" aria-labelledby="toolkit-title">
+        <div class="section-top">
+          <p class="section-index">/ Toolkit</p>
+          <h2 id="toolkit-title">From interface<br />to infrastructure.</h2>
+        </div>
+
+        <div class="tool-groups">
+          <div>
+            <span class="tool-number">01</span>
+            <h3>Build</h3>
+            <p>Vue · TypeScript · Java · Spring Boot · REST · HTML/CSS</p>
+          </div>
+          <div>
+            <span class="tool-number">02</span>
+            <h3>Ship</h3>
+            <p>GitLab CI/CD · Docker · Kubernetes · Helm · GCP · Gradle</p>
+          </div>
+          <div>
+            <span class="tool-number">03</span>
+            <h3>Design securely</h3>
+            <p>Authentication · Authorization · Testing · SQL · Flyway · OpenAPI</p>
+          </div>
+          <div>
+            <span class="tool-number">04</span>
+            <h3>Work together</h3>
+            <p>Scrum · Jira · Figma · Code review · Stakeholder communication</p>
           </div>
         </div>
       </section>
 
-      <section class="experience section reveal" id="experience">
-        <div class="section-label"><span>02</span> Experience</div>
-        <div class="section-heading-row">
-          <h2>Where I’ve made<br />an impact.</h2>
-          <p>A timeline of teams, products, and lessons that shaped how I work today.</p>
+      <section class="contact section reveal" id="contact" aria-labelledby="contact-title">
+        <p class="section-index">/ Contact</p>
+        <div class="contact-main">
+          <p>Have a role, project, or problem worth solving?</p>
+          <h2 id="contact-title">Let’s build<br /><em>something clear.</em></h2>
+          <a href="mailto:noiapah@protonmail.com">
+            noiapah@protonmail.com <span aria-hidden="true">↗</span>
+          </a>
         </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">2023 — Now</div>
-            <div class="timeline-role">
-              <h3>Senior Frontend Developer</h3>
-              <p>Northstar Studio · Oslo, Norway</p>
-            </div>
-            <div class="timeline-description">
-              <p>Leading frontend architecture for B2B products used by 50k+ people. Built a shared design system that reduced delivery time by 35%.</p>
-              <div class="tags"><span>React</span><span>TypeScript</span><span>Design systems</span></div>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2020 — 2023</div>
-            <div class="timeline-role">
-              <h3>Frontend Developer</h3>
-              <p>Bright Labs · Copenhagen, Denmark</p>
-            </div>
-            <div class="timeline-description">
-              <p>Shipped consumer-facing experiences across fintech and climate tech. Partnered closely with designers to turn prototypes into polished products.</p>
-              <div class="tags"><span>Vue</span><span>JavaScript</span><span>Accessibility</span></div>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2018 — 2020</div>
-            <div class="timeline-role">
-              <h3>Junior Web Developer</h3>
-              <p>Form & Function · Amsterdam, NL</p>
-            </div>
-            <div class="timeline-description">
-              <p>Built responsive sites and interactive campaigns for culture and lifestyle brands while learning the value of strong creative collaboration.</p>
-              <div class="tags"><span>HTML & CSS</span><span>JavaScript</span><span>Creative dev</span></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="work section reveal" id="work">
-        <div class="section-label section-label-light"><span>03</span> Selected work</div>
-        <div class="section-heading-row work-heading">
-          <h2>A few things<br />I’m proud of.</h2>
-          <p>Case studies from recent projects. Replace these with your own work, school projects, or achievements.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card project-lime">
-            <div class="project-number">01</div>
-            <div class="project-art orbit-art"><span></span><span></span><i>NS</i></div>
-            <div class="project-copy">
-              <p>Product platform · 2025</p>
-              <h3>Northstar Analytics</h3>
-              <span>Frontend lead · Design system</span>
-            </div>
-          </article>
-
-          <article class="project-card project-lilac">
-            <div class="project-number">02</div>
-            <div class="project-art blocks-art"><span></span><span></span><span></span><i>FL</i></div>
-            <div class="project-copy">
-              <p>Climate fintech · 2023</p>
-              <h3>Flow Finance</h3>
-              <span>Frontend development · UX</span>
-            </div>
-          </article>
-
-          <article class="project-card project-peach">
-            <div class="project-number">03</div>
-            <div class="project-art sun-art"><span></span><i>LU</i></div>
-            <div class="project-copy">
-              <p>Wellbeing app · 2022</p>
-              <h3>Luma</h3>
-              <span>Creative development · Motion</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="skills section reveal">
-        <div class="section-label"><span>04</span> Toolkit</div>
-        <div class="skills-layout">
-          <h2>How I bring ideas<br />to life.</h2>
-          <div class="skill-lists">
-            <div>
-              <h3>Development</h3>
-              <p>JavaScript / TypeScript</p><p>React / Next.js / Vue</p><p>HTML / CSS / Sass</p><p>Node.js / REST APIs</p><p>Git / CI/CD / Testing</p>
-            </div>
-            <div>
-              <h3>Product & design</h3>
-              <p>Design systems</p><p>Rapid prototyping</p><p>Accessibility</p><p>Performance</p><p>Figma</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section reveal" id="contact">
-        <p class="eyebrow"><span></span> Have a project or opportunity?</p>
-        <h2>Let’s make something<br /><em>worthwhile.</em></h2>
-        <a class="contact-email" href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev <span>↗</span></a>
         <div class="contact-footer">
-          <p>Alex Morgan<br /><span>Frontend developer · Oslo</span></p>
-          <div class="socials">
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a>
-          </div>
-          <button class="back-to-top" type="button">Back to top ↑</button>
+          <span>© <span id="year"></span> Noah Cornelius Sørli</span>
+          <button type="button" class="back-to-top">Back to top ↑</button>
         </div>
       </section>
     </main>
+
+    <dialog class="detail-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <p class="dialog-kicker">Case study · ReuseID Demo</p>
+      <h2 id="project-dialog-title">A secure identity flow, made tangible.</h2>
+      <div class="dialog-grid">
+        <div>
+          <h3>The brief</h3>
+          <p>
+            Deliver a full-stack demonstration for Signicat inside an existing technical
+            ecosystem, translating a complex authentication product into a credible
+            online-banking journey.
+          </p>
+        </div>
+        <div>
+          <h3>What I worked with</h3>
+          <p>
+            Vue 3, TypeScript, microfrontends, Java, Spring Boot, REST APIs, relational
+            databases, JUnit, Docker, Kubernetes, Helm, GCP, and GitLab CI/CD.
+          </p>
+        </div>
+        <div>
+          <h3>Key learning</h3>
+          <p>
+            Authentication alone is not enough: every protected resource also needs
+            ownership and permission validation. Clear architecture made those rules
+            easier to test and maintain.
+          </p>
+        </div>
+        <div>
+          <h3>Delivery</h3>
+          <p>
+            The team worked through Scrum, sprint planning, code reviews, documentation,
+            stakeholder communication, and careful scope decisions to protect core quality.
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="detail-dialog" id="telenor-dialog" aria-labelledby="telenor-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <p class="dialog-kicker">Customer technology · 2021 — Present</p>
+      <h2 id="telenor-dialog-title">Technology, explained person to person.</h2>
+      <div class="dialog-grid">
+        <div>
+          <h3>Customer experience</h3>
+          <p>
+            Identified needs, recommended relevant services, demonstrated products, and
+            handled difficult cases with patience and a solution-first approach.
+          </p>
+        </div>
+        <div>
+          <h3>Technical support</h3>
+          <p>
+            Troubleshot devices, connectivity, apps, accounts, SIM cards, data transfers,
+            updates, access, and basic security settings.
+          </p>
+        </div>
+        <div>
+          <h3>Operations</h3>
+          <p>
+            Worked with SAP, inventory, ordering, transactions, returns, shift scheduling,
+            recruiting, privacy procedures, and secure customer-data handling.
+          </p>
+        </div>
+        <div>
+          <h3>Team contribution</h3>
+          <p>
+            Supported and trained new colleagues, shared product knowledge, and collaborated
+            across stores to resolve complex customer cases.
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="detail-dialog" id="education-dialog" aria-labelledby="education-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <p class="dialog-kicker">OsloMet · BSc Computer Engineering</p>
+      <h2 id="education-dialog-title">A broad engineering foundation.</h2>
+      <div class="dialog-grid">
+        <div><h3>Software</h3><p>Java, JavaScript, C, web programming, algorithms, data structures, system development, testing, and APIs.</p></div>
+        <div><h3>Systems</h3><p>Linux, operating systems, threading, assembly, CPU architecture, networks, protocols, and Wireshark.</p></div>
+        <div><h3>Data &amp; security</h3><p>Database design, MySQL, MongoDB, encryption, hashing, zero-trust principles, AI, and data analysis.</p></div>
+        <div><h3>Delivery</h3><p>Agile and Scrum workflows, DevOps, roadmapping, project planning, GDPR, licensing, and system architecture.</p></div>
+      </div>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

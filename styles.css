@@ -311,7 +311,6 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   width: min(980px, calc(100% - 40px)); max-height: calc(100vh - 40px);
   margin: auto; padding: clamp(34px, 6vw, 76px); color: var(--white);
   background: var(--dark); border: 1px solid #565c59;
-  box-shadow: 16px 16px 0 var(--acid);
 }
 .detail-dialog::backdrop { background: rgba(12,15,14,.78); backdrop-filter: blur(8px); }
 .detail-dialog h2 { max-width: 800px; margin: 22px 0 54px; font-size: clamp(44px, 6vw, 76px); }

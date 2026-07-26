@@ -1,5 +1,8 @@
 const menuButton = document.querySelector(".menu-button");
 const menuLabel = menuButton?.querySelector(".sr-only");
+const skipLink = document.querySelector(".skip-link");
+const brand = document.querySelector(".brand");
+const mainContent = document.querySelector("main");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
 const dialogTriggers = document.querySelectorAll("[data-dialog]");
 const dialogs = document.querySelectorAll("dialog");
@@ -9,13 +12,21 @@ function setMenuState(isOpen) {
   document.body.classList.toggle("menu-open", isOpen);
   menuButton?.setAttribute("aria-expanded", String(isOpen));
   if (menuLabel) menuLabel.textContent = isOpen ? "Close navigation" : "Open navigation";
+  if (skipLink) skipLink.inert = isOpen;
+  if (brand) brand.inert = isOpen;
+  if (mainContent) mainContent.inert = isOpen;
 }
 
 menuButton?.addEventListener("click", () => {
   setMenuState(!document.body.classList.contains("menu-open"));
 });
 
-mobileLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    setMenuState(false);
+    requestAnimationFrame(() => menuButton?.focus({ preventScroll: true }));
+  });
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && document.body.classList.contains("menu-open")) {

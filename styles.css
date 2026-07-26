@@ -8,6 +8,7 @@
   --orange: #ff714a;
   --dark: #151918;
   --white: #faf9f5;
+  --blue-accessible: #4059e6;
   --content-width: 1480px;
   --gutter: clamp(16px, 2.2vw, 32px);
 }
@@ -219,7 +220,7 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   width: 100%;
   padding-inline: max(var(--gutter), calc((100% - var(--content-width)) / 2));
   color: var(--white);
-  background: var(--blue);
+  background: var(--blue-accessible);
 }
 .capabilities .section-index { color: var(--acid); }
 .capability-explorer {
@@ -291,7 +292,11 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 }
 .dialog-download:hover { color: var(--white); background: transparent; }
 
-:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--ink);
+}
 
 @media (max-width: 980px) {
   .desktop-nav, .header-contact { display: none; }

@@ -1,5 +1,6 @@
 const menuButton = document.querySelector(".menu-button");
 const menuLabel = menuButton?.querySelector(".sr-only");
+const mobileNav = document.querySelector(".mobile-nav");
 const skipLink = document.querySelector(".skip-link");
 const brand = document.querySelector(".brand");
 const mainContent = document.querySelector("main");
@@ -10,6 +11,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function setMenuState(isOpen) {
   document.body.classList.toggle("menu-open", isOpen);
+  if (isOpen && mobileNav) mobileNav.scrollTop = 0;
   menuButton?.setAttribute("aria-expanded", String(isOpen));
   if (menuLabel) menuLabel.textContent = isOpen ? "Close navigation" : "Open navigation";
   if (skipLink) skipLink.inert = isOpen;

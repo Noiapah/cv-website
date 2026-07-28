@@ -310,7 +310,10 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .menu-open .menu-button span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
   .mobile-nav {
     position: fixed; inset: 88px 0 0; z-index: 40; display: none;
-    padding: 40px 32px; background: var(--acid);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 40px 32px max(40px, env(safe-area-inset-bottom));
+    background: var(--acid);
   }
   .menu-open .mobile-nav { display: grid; align-content: start; }
   .mobile-nav a { padding: 18px 0; border-bottom: 1px solid var(--ink); font-size: 32px; font-weight: 600; }

@@ -260,9 +260,20 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .contact-main > a { font-size: clamp(17px, 2.1vw, 30px); font-weight: 700; border-bottom: 2px solid; }
 .contact-main > a span { margin-left: 20px; }
 .contact-footer {
-  display: flex; justify-content: space-between; padding-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: clamp(24px, 4vw, 60px);
+  padding-top: 24px;
   border-top: 1px solid var(--ink); color: var(--muted); font-size: 11px;
 }
+.social-links { display: flex; gap: 24px; }
+.social-links a {
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  font-weight: 700;
+}
+.social-links a:hover { color: var(--ink); border-bottom-color: currentColor; }
 
 .detail-dialog {
   width: min(980px, calc(100% - 40px)); max-height: calc(100vh - 40px);
@@ -367,6 +378,8 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .contact-main { margin: 55px 0 110px; }
   .contact h2 { font-size: 16vw; }
   .contact-main > a { overflow-wrap: anywhere; }
+  .contact-footer { grid-template-columns: 1fr; gap: 24px; }
+  .back-to-top { justify-self: start; }
   .dialog-grid { grid-template-columns: 1fr; }
   .detail-dialog { padding: 52px 24px 32px; }
   .detail-dialog h2 { margin-bottom: 38px; }

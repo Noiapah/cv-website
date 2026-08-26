@@ -220,6 +220,15 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .spin-card::after { background: #60766e; }
 .spin-card .project-card-index,
 .spin-card .project-card-type { color: #60766e; }
+.horse-card,
+.horse-card.is-selected {
+  border-color: #6fa84b;
+  color: #f4e9ad;
+  background: #17391d;
+}
+.horse-card::after { background: #f4e9ad; }
+.horse-card .project-card-index,
+.horse-card .project-card-type { color: #8fbd70; }
 .project-feature-empty {
   grid-column: 1 / -1;
   display: grid;
@@ -313,6 +322,14 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   color: #fff;
   background: #455b53;
   text-align: center;
+}
+.horse-window { box-shadow: 18px 18px 0 #6fa84b; transform: rotate(1deg); }
+.horse-window img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  image-rendering: pixelated;
 }
 .window-bar {
   height: 48px; display: flex; align-items: center; gap: 7px; padding: 0 15px;

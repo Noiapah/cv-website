@@ -15,8 +15,9 @@ leaving the page.
 The site includes:
 
 - A concise professional profile
-- A selectable project showcase featuring the ReuseID bachelor project and
-  [Spin & Spill](https://github.com/Noiapah/spin-party-game)
+- A selectable project showcase featuring the ReuseID bachelor project,
+  [Spin & Spill](https://github.com/Noiapah/spin-party-game), and
+  [Horsin' Around](https://github.com/Noiapah/horsinaround)
 - A downloadable copy of the complete bachelor report
 - A link to the live [Spin & Spill game](https://noiapah.github.io/spin-party-game/)
 - Work, education, and volunteer experience
@@ -34,6 +35,7 @@ dependencies, build process, or generated output.
 ```text
 cv-website/
 ├── assets/
+│   ├── horsinaround-smoke.png
 │   └── noah-sorli-bachelor-report-reuseid.pdf
 ├── index.html
 ├── script.js
@@ -62,7 +64,8 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 Project-card labels and ordering are defined in the `.project-picker` element in
 `index.html`. The ReuseID markup comes from the initial `.project-feature` element, while
-the Spin & Spill featured-project markup is stored in `spinAndSpillMarkup` in `script.js`.
+the other featured-project markup is stored in `spinAndSpillMarkup` and
+`horsinAroundMarkup` in `script.js`.
 When adding another project, give its card a unique `data-project` value and add the
 matching selected-project markup to the card click handler.
 

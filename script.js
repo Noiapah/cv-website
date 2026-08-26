@@ -106,6 +106,47 @@ const spinAndSpillMarkup = `
   </div>
 `;
 
+const horsinAroundMarkup = `
+  <div class="project-copy">
+    <span class="client-chip">Phaser game prototype</span>
+    <h2 id="project-title">Horsin'<br />Around</h2>
+    <p>
+      A top-down, single-player horse game with eight-direction movement,
+      multiple gaits, jumping, enterable facilities, local progression, and timed racing.
+    </p>
+    <div class="project-tags" role="list" aria-label="Key technologies">
+      <span role="listitem">Phaser 3</span>
+      <span role="listitem">JavaScript</span>
+      <span role="listitem">Game systems</span>
+      <span role="listitem">Pixel art</span>
+    </div>
+    <div class="project-actions">
+      <a
+        class="case-link"
+        href="https://github.com/Noiapah/horsinaround"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View source on GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="project-window horse-window">
+    <div class="window-bar" aria-hidden="true">
+      <div class="window-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span>horsin-around / meadow</span>
+    </div>
+    <img
+      src="assets/horsinaround-smoke.png"
+      alt="Pixel-art gameplay showing a horse standing in a green meadow with its movement and gait HUD"
+    />
+  </div>
+`;
+
 projectCards.forEach((card) => {
   card.addEventListener("click", () => {
     projectCards.forEach((item) => {
@@ -125,6 +166,12 @@ projectCards.forEach((card) => {
     if (card.dataset.project === "spin-and-spill") {
       projectFeature.innerHTML = spinAndSpillMarkup;
       projectMeta.innerHTML = "Personal project <span>·</span> Party game <span>·</span> 2026";
+      return;
+    }
+
+    if (card.dataset.project === "horsin-around") {
+      projectFeature.innerHTML = horsinAroundMarkup;
+      projectMeta.innerHTML = "Personal project <span>·</span> Browser game <span>·</span> 2026";
       return;
     }
 

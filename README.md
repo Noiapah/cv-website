@@ -1,7 +1,7 @@
 # Noah Cornelius Sørli — CV and portfolio
 
 A responsive, single-page portfolio presenting my computer-engineering background,
-professional experience, technical toolkit, and bachelor project for Signicat.
+professional experience, technical toolkit, and selected software projects.
 
 **Live website:** [noiapah.github.io/cv-website](https://noiapah.github.io/cv-website/)
 
@@ -9,13 +9,16 @@ professional experience, technical toolkit, and bachelor project for Signicat.
 
 The website is designed to keep the main content concise and easy to scan. Additional
 details about my bachelor project, work experience, and education are available through
-accessible dialog windows.
+accessible dialog windows. A project-card selector switches the featured project without
+leaving the page.
 
 The site includes:
 
 - A concise professional profile
-- A featured ReuseID bachelor project
+- A selectable project showcase featuring the ReuseID bachelor project and
+  [Spin & Spill](https://github.com/Noiapah/spin-party-game)
 - A downloadable copy of the complete bachelor report
+- A link to the live [Spin & Spill game](https://noiapah.github.io/spin-party-game/)
 - Work, education, and volunteer experience
 - A capability-card overview covering frontend, backend, cloud, security, and
   collaboration
@@ -54,8 +57,14 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 - Update text, links, sections, and dialog content in `index.html`.
 - Update colors, typography, spacing, and responsive layouts in `styles.css`.
-- Update navigation and dialog behavior in `script.js`.
+- Update navigation, dialog behavior, and project-selection logic in `script.js`.
 - Store downloadable documents and other static files in `assets/`.
+
+Project-card labels and ordering are defined in the `.project-picker` element in
+`index.html`. The ReuseID markup comes from the initial `.project-feature` element, while
+the Spin & Spill featured-project markup is stored in `spinAndSpillMarkup` in `script.js`.
+When adding another project, give its card a unique `data-project` value and add the
+matching selected-project markup to the card click handler.
 
 The bachelor report is referenced twice in `index.html`: once in the main project section
 and once inside the project dialog. If the PDF is renamed, both links must be updated.

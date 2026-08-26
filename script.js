@@ -5,7 +5,6 @@ const skipLink = document.querySelector(".skip-link");
 const brand = document.querySelector(".brand");
 const mainContent = document.querySelector("main");
 const mobileLinks = document.querySelectorAll(".mobile-nav a");
-const dialogTriggers = document.querySelectorAll("[data-dialog]");
 const dialogs = document.querySelectorAll("dialog");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -41,12 +40,43 @@ window.matchMedia("(min-width: 981px)").addEventListener("change", (event) => {
   if (event.matches) setMenuState(false);
 });
 
-dialogTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    const dialog = document.getElementById(trigger.dataset.dialog);
-    if (!dialog) return;
-    dialog.showModal();
-    document.body.classList.add("dialog-open");
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-dialog]");
+  if (!trigger) return;
+  const dialog = document.getElementById(trigger.dataset.dialog);
+  if (!dialog) return;
+  dialog.showModal();
+  document.body.classList.add("dialog-open");
+});
+
+const projectFeature = document.querySelector(".project-feature");
+const projectMeta = document.querySelector(".project-meta");
+const projectCards = document.querySelectorAll(".project-card");
+const selectedProjectMarkup = projectFeature?.innerHTML;
+const selectedProjectMeta = projectMeta?.innerHTML;
+
+projectCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    projectCards.forEach((item) => {
+      const isSelected = item === card;
+      item.classList.toggle("is-selected", isSelected);
+      item.setAttribute("aria-pressed", String(isSelected));
+    });
+
+    if (!projectFeature || !projectMeta) return;
+
+    if (card.dataset.project === "reuse-id") {
+      projectFeature.innerHTML = selectedProjectMarkup;
+      projectMeta.innerHTML = selectedProjectMeta;
+      return;
+    }
+
+    projectMeta.textContent = "Project details coming soon";
+    projectFeature.innerHTML = `
+      <div class="project-feature-empty">
+        <p id="project-title">Project coming soon</p>
+      </div>
+    `;
   });
 });
 

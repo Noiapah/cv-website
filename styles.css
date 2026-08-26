@@ -187,6 +187,30 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .project-card:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
 .project-card.is-selected { border-color: var(--acid); background: #292f2d; }
 .project-card.is-selected::after { transform: scaleX(1); }
+.project-card-filled {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  color: var(--white);
+  text-align: left;
+}
+.project-card-index,
+.project-card-type {
+  color: #8d9490;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.project-card-type { align-self: end; text-align: right; }
+.project-card-title {
+  align-self: end;
+  font-size: clamp(21px, 2vw, 30px);
+  font-weight: 600;
+  letter-spacing: -.05em;
+  line-height: 1;
+}
 .project-feature-empty {
   grid-column: 1 / -1;
   display: grid;
@@ -198,6 +222,50 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .project-feature-empty p {
   margin: 0;
   font: 500 11px "DM Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.spin-window { box-shadow: 18px 18px 0 var(--orange); transform: rotate(-1.2deg); }
+.spin-body {
+  display: grid;
+  place-items: center;
+  min-height: 480px;
+  padding: 48px;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(216,255,52,.13), transparent 28%),
+    radial-gradient(circle at 80% 78%, rgba(255,113,74,.16), transparent 32%),
+    #202524;
+}
+.spin-wheel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(75%, 360px);
+  aspect-ratio: 1;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: conic-gradient(var(--acid) 0 25%, var(--blue) 25% 50%, var(--orange) 50% 75%, #f2a6d7 75%);
+  box-shadow: 12px 12px 0 rgba(0,0,0,.35);
+}
+.spin-wheel::before,
+.spin-wheel::after {
+  content: "";
+  position: absolute;
+  background: var(--ink);
+}
+.spin-wheel::before { width: 2px; height: 100%; }
+.spin-wheel::after { width: 100%; height: 2px; }
+.spin-wheel span {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32%;
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  color: var(--acid);
+  background: var(--ink);
+  font: 600 12px "DM Mono", monospace;
   letter-spacing: .08em;
   text-transform: uppercase;
 }

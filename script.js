@@ -55,6 +55,46 @@ const projectCards = document.querySelectorAll(".project-card");
 const selectedProjectMarkup = projectFeature?.innerHTML;
 const selectedProjectMeta = projectMeta?.innerHTML;
 
+const spinAndSpillMarkup = `
+  <div class="project-copy">
+    <span class="client-chip">Browser party game</span>
+    <h2 id="project-title">Spin &amp;<br />Spill</h2>
+    <p>
+      A dependency-free, phone-first truth-or-dare game with adaptive intensity,
+      varied prompts, and timed game presets.
+    </p>
+    <div class="project-tags" role="list" aria-label="Key technologies">
+      <span role="listitem">JavaScript</span>
+      <span role="listitem">HTML</span>
+      <span role="listitem">CSS</span>
+      <span role="listitem">GitHub Pages</span>
+    </div>
+    <div class="project-actions">
+      <a
+        class="case-link"
+        href="https://noiapah.github.io/spin-party-game/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play Spin &amp; Spill <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="project-window spin-window" aria-hidden="true">
+    <div class="window-bar">
+      <div class="window-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span>spin-and-spill / game</span>
+    </div>
+    <div class="spin-body">
+      <div class="spin-wheel"><span>Spin</span></div>
+    </div>
+  </div>
+`;
+
 projectCards.forEach((card) => {
   card.addEventListener("click", () => {
     projectCards.forEach((item) => {
@@ -68,6 +108,12 @@ projectCards.forEach((card) => {
     if (card.dataset.project === "reuse-id") {
       projectFeature.innerHTML = selectedProjectMarkup;
       projectMeta.innerHTML = selectedProjectMeta;
+      return;
+    }
+
+    if (card.dataset.project === "spin-and-spill") {
+      projectFeature.innerHTML = spinAndSpillMarkup;
+      projectMeta.innerHTML = "Personal project <span>·</span> Party game <span>·</span> 2026";
       return;
     }
 

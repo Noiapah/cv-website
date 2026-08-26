@@ -57,16 +57,16 @@ const selectedProjectMeta = projectMeta?.innerHTML;
 
 const spinAndSpillMarkup = `
   <div class="project-copy">
-    <span class="client-chip">Browser party game</span>
+    <span class="client-chip">Mobile party game</span>
     <h2 id="project-title">Spin &amp;<br />Spill</h2>
     <p>
-      A dependency-free, phone-first truth-or-dare game with adaptive intensity,
-      varied prompts, and timed game presets.
+      A phone-first spin-the-bottle truth-or-dare game with configurable sessions,
+      a randomized bottle, and prompts that intensify as the game progresses.
     </p>
     <div class="project-tags" role="list" aria-label="Key technologies">
       <span role="listitem">JavaScript</span>
-      <span role="listitem">HTML</span>
-      <span role="listitem">CSS</span>
+      <span role="listitem">Responsive UI</span>
+      <span role="listitem">Game logic</span>
       <span role="listitem">GitHub Pages</span>
     </div>
     <div class="project-actions">
@@ -76,7 +76,7 @@ const spinAndSpillMarkup = `
         target="_blank"
         rel="noopener noreferrer"
       >
-        Play Spin &amp; Spill <span aria-hidden="true">↗</span>
+        Play the live game <span aria-hidden="true">↗</span>
       </a>
     </div>
   </div>
@@ -90,7 +90,18 @@ const spinAndSpillMarkup = `
       <span>spin-and-spill / game</span>
     </div>
     <div class="spin-body">
-      <div class="spin-wheel"><span>Spin</span></div>
+      <div class="spin-app-preview">
+        <span class="spin-brand">✦</span>
+        <p class="spin-eyebrow">A truth, dare, or drink game</p>
+        <strong class="spin-title">Spin <em>&amp;</em> Spill</strong>
+        <p class="spin-intro">Pass the phone around the circle. Spin, pick truth or dare, and answer—or take your agreed-upon skip.</p>
+        <div class="spin-setup-preview">
+          <span>Game length <b>Medium</b></span>
+          <i class="spin-range"></i>
+          <span>Number of players <b>6</b></span>
+          <span class="spin-start">Start the party</span>
+        </div>
+      </div>
     </div>
   </div>
 `;

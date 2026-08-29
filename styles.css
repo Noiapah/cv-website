@@ -324,11 +324,18 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   text-align: center;
 }
 .horse-window { box-shadow: 18px 18px 0 #6fa84b; transform: rotate(1deg); }
+.horse-body {
+  overflow: hidden;
+  padding: 0;
+  background: #17391d;
+}
 .horse-window img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   object-fit: cover;
+  object-position: left center;
   image-rendering: pixelated;
 }
 .window-bar {

@@ -140,10 +140,12 @@ const horsinAroundMarkup = `
       </div>
       <span>horsin-around / meadow</span>
     </div>
-    <img
-      src="assets/horsinaround-smoke.png"
-      alt="Pixel-art gameplay showing a horse standing in a green meadow with its movement and gait HUD"
-    />
+    <div class="window-body horse-body">
+      <img
+        src="assets/horsinaround-smoke.png"
+        alt="Pixel-art gameplay showing a horse standing in a green meadow with its movement and gait HUD"
+      />
+    </div>
   </div>
 `;
 

@@ -55,57 +55,6 @@ const projectCards = document.querySelectorAll(".project-card");
 const selectedProjectMarkup = projectFeature?.innerHTML;
 const selectedProjectMeta = projectMeta?.innerHTML;
 
-const spinAndSpillMarkup = `
-  <div class="project-copy">
-    <span class="client-chip">Mobile party game</span>
-    <h2 id="project-title">Spin &amp;<br />Spill</h2>
-    <p>
-      A phone-first spin-the-bottle truth-or-dare game with configurable sessions,
-      a randomized bottle, and prompts that intensify as the game progresses.
-    </p>
-    <div class="project-tags" role="list" aria-label="Key technologies">
-      <span role="listitem">JavaScript</span>
-      <span role="listitem">Responsive UI</span>
-      <span role="listitem">Game logic</span>
-      <span role="listitem">GitHub Pages</span>
-    </div>
-    <div class="project-actions">
-      <a
-        class="case-link"
-        href="https://noiapah.github.io/spin-party-game/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Play the live game <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </div>
-  <div class="project-window spin-window" aria-hidden="true">
-    <div class="window-bar">
-      <div class="window-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <span>spin-and-spill / game</span>
-    </div>
-    <div class="spin-body">
-      <div class="spin-app-preview">
-        <span class="spin-brand">✦</span>
-        <p class="spin-eyebrow">A truth, dare, or drink game</p>
-        <strong class="spin-title">Spin <em>&amp;</em> Spill</strong>
-        <p class="spin-intro">Pass the phone around the circle. Spin, pick truth or dare, and answer—or take your agreed-upon skip.</p>
-        <div class="spin-setup-preview">
-          <span>Game length <b>Medium</b></span>
-          <i class="spin-range"></i>
-          <span>Number of players <b>6</b></span>
-          <span class="spin-start">Start the party</span>
-        </div>
-      </div>
-    </div>
-  </div>
-`;
-
 const horsinAroundMarkup = `
   <div class="project-copy">
     <span class="client-chip">Phaser game prototype</span>
@@ -162,12 +111,6 @@ projectCards.forEach((card) => {
     if (card.dataset.project === "reuse-id") {
       projectFeature.innerHTML = selectedProjectMarkup;
       projectMeta.innerHTML = selectedProjectMeta;
-      return;
-    }
-
-    if (card.dataset.project === "spin-and-spill") {
-      projectFeature.innerHTML = spinAndSpillMarkup;
-      projectMeta.innerHTML = "Personal project <span>·</span> Party game <span>·</span> 2026";
       return;
     }
 

@@ -16,10 +16,10 @@ The site includes:
 
 - A concise professional profile
 - A selectable project showcase featuring the ReuseID bachelor project,
-  [Spin & Spill](https://github.com/Noiapah/spin-party-game), and
+  [Telefonhjelp](https://github.com/Noiapah/ticket_sys_demo), and
   [Horsin' Around](https://github.com/Noiapah/horsinaround)
 - A downloadable copy of the complete bachelor report
-- A link to the live [Spin & Spill game](https://noiapah.github.io/spin-party-game/)
+- A link to the live [Telefonhjelp demo](https://noiapah.github.io/ticket_sys_web_demo/#/)
 - Work, education, and volunteer experience
 - A capability-card overview covering frontend, backend, cloud, security, and
   collaboration
@@ -64,7 +64,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 Project-card labels and ordering are defined in the `.project-picker` element in
 `index.html`. The ReuseID markup comes from the initial `.project-feature` element, while
-the other featured-project markup is stored in `spinAndSpillMarkup` and
+the other featured-project markup is stored in `telefonhjelpMarkup` and
 `horsinAroundMarkup` in `script.js`.
 When adding another project, give its card a unique `data-project` value and add the
 matching selected-project markup to the card click handler.

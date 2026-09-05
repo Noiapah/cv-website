@@ -220,6 +220,15 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
 .spin-card::after { background: #60766e; }
 .spin-card .project-card-index,
 .spin-card .project-card-type { color: #60766e; }
+.ticket-card,
+.ticket-card.is-selected {
+  border-color: #78a7b1;
+  color: #eaf8f6;
+  background: #15373b;
+}
+.ticket-card::after { background: #8fd2cb; }
+.ticket-card .project-card-index,
+.ticket-card .project-card-type { color: #8fd2cb; }
 .horse-card,
 .horse-card.is-selected {
   border-color: #6fa84b;
@@ -323,6 +332,75 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   background: #455b53;
   text-align: center;
 }
+.ticket-chip { background: #8fd2cb; }
+.ticket-window { box-shadow: 18px 18px 0 #3d777d; transform: rotate(-1deg); }
+.ticket-body {
+  display: grid;
+  min-height: 480px;
+  padding: 34px;
+  background: #dce8e6;
+}
+.ticket-app-preview {
+  display: grid;
+  grid-template-columns: minmax(105px, .34fr) 1fr;
+  width: 100%;
+  min-height: 390px;
+  overflow: hidden;
+  color: #17373a;
+  background: #f7faf9;
+  border: 1px solid #bfd1ce;
+  border-radius: 10px;
+  box-shadow: 0 16px 35px rgba(24, 59, 62, .16);
+  font-family: Arial, sans-serif;
+}
+.ticket-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 16px;
+  color: #dceeed;
+  background: #173d41;
+}
+.ticket-sidebar strong { margin-bottom: 24px; font-size: 13px; }
+.ticket-sidebar span { padding: 9px 10px; border-radius: 5px; font-size: 9px; }
+.ticket-sidebar .is-active { color: #173d41; background: #8fd2cb; font-weight: 700; }
+.ticket-dashboard { min-width: 0; padding: 27px; }
+.ticket-dashboard-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.ticket-dashboard-head div { display: grid; gap: 5px; }
+.ticket-dashboard-head small,
+.ticket-stats small,
+.ticket-list small,
+.ticket-list-head { color: #718b89; font-size: 7px; letter-spacing: .08em; }
+.ticket-dashboard-head strong { font-size: 19px; }
+.ticket-dashboard-head > span {
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #f7faf9;
+  background: #2d6d72;
+  font-size: 8px;
+  font-weight: 700;
+}
+.ticket-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: 22px 0; }
+.ticket-stats > span { display: grid; gap: 7px; padding: 12px; border: 1px solid #d5e1df; border-radius: 6px; }
+.ticket-stats strong { font-size: 18px; }
+.ticket-list { display: grid; gap: 8px; }
+.ticket-list-head { padding-bottom: 3px; }
+.ticket-list article {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 9px;
+  padding: 11px;
+  border: 1px solid #d5e1df;
+  border-radius: 6px;
+  background: #fff;
+}
+.ticket-list article i { width: 6px; height: 30px; border-radius: 4px; background: #e49a56; }
+.ticket-list article:nth-child(3) i { background: #6ca9a5; }
+.ticket-list article:nth-child(4) i { background: #d8bf61; }
+.ticket-list article > span { display: grid; min-width: 0; gap: 4px; }
+.ticket-list article strong { overflow: hidden; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.ticket-list article b { color: #497774; font-size: 7px; }
 .horse-window { box-shadow: 18px 18px 0 #6fa84b; transform: rotate(1deg); }
 .horse-body {
   overflow: hidden;
@@ -546,6 +624,12 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   }
   .project-meta span { padding-inline: 2px; }
   .window-body { min-height: 360px; padding: 28px 18px; }
+  .ticket-body { min-height: 360px; padding: 18px; }
+  .ticket-app-preview { grid-template-columns: 90px 1fr; min-height: 324px; }
+  .ticket-sidebar { padding: 18px 10px; }
+  .ticket-dashboard { padding: 18px 14px; }
+  .ticket-stats { gap: 5px; }
+  .ticket-stats > span { padding: 9px 7px; }
   .bank-card strong { margin-top: 60px; }
   .code-lines { display: none; }
   .section-top { grid-template-columns: 1fr; }
@@ -568,6 +652,11 @@ h2 { font-size: clamp(52px, 6vw, 94px); }
   .dialog-grid { grid-template-columns: 1fr; }
   .detail-dialog { padding: 52px 24px 32px; }
   .detail-dialog h2 { margin-bottom: 38px; }
+}
+
+@media (max-width: 460px) {
+  .ticket-app-preview { grid-template-columns: 1fr; }
+  .ticket-sidebar { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

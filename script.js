@@ -55,6 +55,81 @@ const projectCards = document.querySelectorAll(".project-card");
 const selectedProjectMarkup = projectFeature?.innerHTML;
 const selectedProjectMeta = projectMeta?.innerHTML;
 
+const telefonhjelpMarkup = `
+  <div class="project-copy">
+    <span class="client-chip ticket-chip">Desktop support application</span>
+    <h2 id="project-title">Telefon&shy;hjelp</h2>
+    <p>
+      A local, Norwegian-language support system for phone-store teams to register,
+      organize, and follow customer cases while handling sensitive information safely.
+    </p>
+    <div class="project-tags" role="list" aria-label="Key technologies">
+      <span role="listitem">Vue 3</span>
+      <span role="listitem">TypeScript</span>
+      <span role="listitem">Spring</span>
+      <span role="listitem">SQLite</span>
+    </div>
+    <div class="project-actions">
+      <a
+        class="case-link"
+        href="https://noiapah.github.io/ticket_sys_web_demo/#/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Preview the project <span aria-hidden="true">&#8599;</span>
+      </a>
+      <a
+        class="case-link"
+        href="https://github.com/Noiapah/ticket_sys_demo"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download and try it <span aria-hidden="true">&#8595;</span>
+      </a>
+    </div>
+  </div>
+  <div class="project-window ticket-window">
+    <div class="window-bar" aria-hidden="true">
+      <div class="window-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span>telefonhjelp / saker</span>
+    </div>
+    <div class="window-body ticket-body" aria-hidden="true">
+      <div class="ticket-app-preview">
+        <aside class="ticket-sidebar">
+          <strong>Telefonhjelp</strong>
+          <span class="is-active">Saker</span>
+          <span>Kunder</span>
+          <span>Rapporter</span>
+        </aside>
+        <div class="ticket-dashboard">
+          <div class="ticket-dashboard-head">
+            <div>
+              <small>SAKSOVERSIKT</small>
+              <strong>Aktive saker</strong>
+            </div>
+            <span>+ Ny sak</span>
+          </div>
+          <div class="ticket-stats">
+            <span><small>ÅPNE</small><strong>12</strong></span>
+            <span><small>HASTER</small><strong>03</strong></span>
+            <span><small>LØST I DAG</small><strong>08</strong></span>
+          </div>
+          <div class="ticket-list">
+            <span class="ticket-list-head">SIST OPPDATERT</span>
+            <article><i></i><span><strong>Skjermbytte og datalagring</strong><small>#1048 · iPhone 15 Pro</small></span><b>Pågår</b></article>
+            <article><i></i><span><strong>Overføring til ny telefon</strong><small>#1047 · Samsung S24</small></span><b>Ny</b></article>
+            <article><i></i><span><strong>Feil med BankID</strong><small>#1046 · Google Pixel 9</small></span><b>Venter</b></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
 const horsinAroundMarkup = `
   <div class="project-copy">
     <span class="client-chip">Phaser game prototype</span>
@@ -111,6 +186,12 @@ projectCards.forEach((card) => {
     if (card.dataset.project === "reuse-id") {
       projectFeature.innerHTML = selectedProjectMarkup;
       projectMeta.innerHTML = selectedProjectMeta;
+      return;
+    }
+
+    if (card.dataset.project === "telefonhjelp") {
+      projectFeature.innerHTML = telefonhjelpMarkup;
+      projectMeta.innerHTML = "Personal project <span>&middot;</span> Desktop application <span>&middot;</span> 2026";
       return;
     }
 

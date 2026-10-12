@@ -21,6 +21,7 @@ The site includes:
 - A downloadable copy of the complete bachelor report
 - A link to the live [Telefonhjelp demo](https://noiapah.github.io/ticket_sys_web_demo/#/)
 - Work, education, and volunteer experience
+- An expandable work timeline with a form to add, edit, and remove roles
 - A capability-card overview covering frontend, backend, cloud, security, and
   collaboration
 - Responsive desktop and mobile layouts
@@ -40,6 +41,7 @@ cv-website/
 ├── index.html
 ├── script.js
 ├── styles.css
+├── timeline.js
 └── README.md
 ```
 
@@ -60,6 +62,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 - Update text, links, sections, and dialog content in `index.html`.
 - Update colors, typography, spacing, and responsive layouts in `styles.css`.
 - Update navigation, dialog behavior, and project-selection logic in `script.js`.
+- Update published work-timeline entries in the `defaultExperience` array in `timeline.js`.
 - Store downloadable documents and other static files in `assets/`.
 
 Project-card labels and ordering are defined in the `.project-picker` element in
@@ -68,6 +71,16 @@ the other featured-project markup is stored in `telefonhjelpMarkup` and
 `horsinAroundMarkup` in `script.js`.
 When adding another project, give its card a unique `data-project` value and add the
 matching selected-project markup to the card click handler.
+
+The work timeline's **Add experience** button opens a form for a job title, company,
+start/end years, current-role status, and optional responsibilities. Click a role to
+expand its details and access **Edit experience** or **Remove**. Current roles appear
+first, followed by the most recent start year. Changes persist in this browser using
+local storage; they are not shared with other visitors or devices. If storage is
+unavailable, the page explains that changes last only while it remains open.
+To make roles visible to all visitors, update `defaultExperience` in `timeline.js`
+and deploy the source changes. A browser with saved entries keeps its local version;
+remove the `ncs-work-experience-v1` local-storage key to load the published defaults.
 
 The bachelor report is referenced twice in `index.html`: once in the main project section
 and once inside the project dialog. If the PDF is renamed, both links must be updated.

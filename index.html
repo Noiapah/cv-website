@@ -29,6 +29,7 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#project">Project</a>
         <a href="#experience">Experience</a>
+        <a href="#work-timeline">Timeline</a>
         <a href="#toolkit">Toolkit</a>
       </nav>
 
@@ -45,6 +46,7 @@
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
         <a href="#project">Project</a>
         <a href="#experience">Experience</a>
+        <a href="#work-timeline">Timeline</a>
         <a href="#toolkit">Toolkit</a>
         <a href="mailto:noiapah@protonmail.com">Contact</a>
       </nav>
@@ -242,6 +244,25 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section class="work-timeline section" id="work-timeline" aria-labelledby="timeline-title">
+        <div class="section-top">
+          <p class="section-index">/ Work timeline</p>
+          <div>
+            <h2 id="timeline-title">Experience, one<br />chapter at a time.</h2>
+            <p class="timeline-intro">Explore each role, or add the next step in your work experience.</p>
+          </div>
+        </div>
+        <div class="timeline-toolbar">
+          <p id="timeline-count"></p>
+          <button class="button button-primary" type="button" id="add-experience" aria-haspopup="dialog" aria-controls="experience-editor">Add experience <span aria-hidden="true">+</span></button>
+        </div>
+        <p class="timeline-storage-note" id="timeline-storage-note">Changes are saved in this browser. They are not published to other visitors.</p>
+        <ol class="timeline-list" id="timeline-list" aria-label="Work experience, newest first"></ol>
+        <p class="timeline-empty" id="timeline-empty" hidden>Your timeline is ready for its first chapter. Add a role to get started.</p>
+        <p class="sr-only" id="timeline-status" role="status"></p>
+        <noscript><p>Enable JavaScript to explore the timeline and add work experience.</p></noscript>
       </section>
 
       <section class="capabilities section" id="toolkit" aria-labelledby="toolkit-title">
@@ -443,6 +464,37 @@
       </div>
     </dialog>
 
+    <dialog class="detail-dialog experience-editor" id="experience-editor" aria-labelledby="experience-editor-title">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <p class="dialog-kicker">Your next chapter</p>
+      <h2 id="experience-editor-title">Add experience</h2>
+      <form id="experience-form">
+        <div class="experience-fields">
+          <label class="field-wide">Job title
+            <input name="role" required maxlength="120" autocomplete="organization-title" placeholder="e.g. Software engineer" />
+          </label>
+          <label class="field-wide">Company or organization
+            <input name="company" required maxlength="160" autocomplete="organization" placeholder="e.g. Company name" />
+          </label>
+          <label>Start year
+            <input name="start" type="number" required min="1900" max="9999" step="1" placeholder="2021" />
+          </label>
+          <label>End year
+            <input name="end" type="number" required min="1900" max="9999" step="1" placeholder="2026" />
+          </label>
+          <label class="field-wide current-role"><input name="current" type="checkbox" /> I currently work here</label>
+          <label class="field-wide">Responsibilities and highlights (optional)
+            <textarea name="description" rows="5" maxlength="4000" placeholder="What did you work on? What did you achieve?"></textarea>
+          </label>
+        </div>
+        <div class="experience-form-actions">
+          <button class="button button-primary" type="submit">Save experience <span aria-hidden="true">↗</span></button>
+          <button class="text-button" type="button" id="cancel-experience">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
     <script src="script.js"></script>
+    <script src="timeline.js"></script>
   </body>
 </html>

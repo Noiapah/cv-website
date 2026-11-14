@@ -4,327 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3f0e8" />
-    <meta
-      name="description"
-      content="Portfolio of Noah Cornelius Sørli, a computer engineer focused on full-stack development, secure systems, and clear user experiences."
-    />
-    <title>Noah Cornelius Sørli — Computer Engineer</title>
+    <meta name="description" content="Noah Cornelius Sørli — full-stack developer in Oslo. Computer engineering at OsloMet, Vue and Spring Boot projects, and customer-facing technical support experience." />
+    <title>Noah Cornelius Sørli — Full-stack Developer &amp; Computer Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Noah Cornelius Sørli, home">
-        <span class="brand-mark">NCS</span>
-        <span class="brand-name">Noah Cornelius Sørli</span>
-      </a>
-
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#project">Project</a>
+      <a class="brand" href="#top" aria-label="Noah Cornelius Sørli, home"><span class="brand-mark">NCS</span><span>CV &amp; portfolio</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#project">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#work-timeline">Timeline</a>
-        <a href="#toolkit">Toolkit</a>
+        <a href="#education">Education</a>
+        <a href="#toolkit">Skills</a>
       </nav>
-
-      <a class="header-contact" href="mailto:noiapah@protonmail.com">
-        Let’s talk <span aria-hidden="true">↗</span>
-      </a>
-
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span class="sr-only">Open navigation</span>
-      </button>
-
-      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-        <a href="#project">Project</a>
-        <a href="#experience">Experience</a>
-        <a href="#work-timeline">Timeline</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="mailto:noiapah@protonmail.com">Contact</a>
-      </nav>
+      <a class="header-contact" href="mailto:noiapah@protonmail.com">Get in touch <span aria-hidden="true">↗</span></a>
     </header>
 
     <main id="main" tabindex="-1">
-      <section class="hero" id="top">
+      <section class="hero" id="top" aria-labelledby="profile-title">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span aria-hidden="true"></span>
-            Oslo · Computer Engineering, OsloMet
-          </p>
-          <h1>Engineering<br />that makes<br /><em>sense.</em></h1>
-          <p class="hero-intro">
-            I’m Noah — a full-stack developer who turns complex problems into understandable solutions.
-          </p>
+          <p class="eyebrow"><span class="location-dot" aria-hidden="true"></span>Oslo, Norway <span class="eyebrow-divider">/</span> Computer engineer</p>
+          <h1 id="profile-title">Noah Cornelius<br /> Sørli<span class="name-period">.</span></h1>
+          <p class="hero-role">Full-stack developer</p>
+          <p class="hero-intro">I build understandable software, from user interfaces to secure APIs. My background combines computer engineering with customer-facing technology support since 2021.</p>
+          <p class="print-contact"><a href="mailto:noiapah@protonmail.com">noiapah@protonmail.com</a> · Oslo, Norway</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#project">See selected work <span>↓</span></a>
-            <a class="button" href="mailto:noiapah@protonmail.com">Email me <span>↗</span></a>
+            <a class="button button-primary" href="mailto:noiapah@protonmail.com">Email Noah <span aria-hidden="true">↗</span></a>
+            <button class="button print-button" type="button" hidden>Print / save CV <span aria-hidden="true">↓</span></button>
           </div>
-        </div>
-
-      </section>
-
-      <section class="intro section" aria-labelledby="intro-title">
-        <p class="section-index">/ Profile</p>
-        <div>
-          <h2 id="intro-title">Technical depth.<br />Human clarity.</h2>
-        </div>
-        <div class="intro-copy">
-          <p>
-            My background combines computer engineering with five years of customer-facing
-            technology support work.
-          </p>
-          <p>
-            That means I'm comfortable tracing the problem, explaining the issue while building a solution for someone without a technical background.
-          </p>
-        </div>
-      </section>
-
-      <section class="project section" id="project" aria-labelledby="project-title">
-        <div class="project-head">
-          <p class="section-index">/ Selected project</p>
-          <p class="project-meta">Bachelor project <span>·</span> External client <span>·</span> 2026</p>
-        </div>
-
-        <article class="project-feature">
-          <div class="project-copy">
-            <span class="client-chip">Built for Signicat</span>
-            <h2 id="project-title">ReuseID<br />Demo</h2>
-            <p>
-              A realistic online-banking demo that makes reusable digital identity and
-              mobile authentication easy to understand.
-            </p>
-            <div class="project-tags" role="list" aria-label="Key technologies">
-              <span role="listitem">Vue 3</span>
-              <span role="listitem">TypeScript</span>
-              <span role="listitem">Spring Boot</span>
-              <span role="listitem">Kubernetes</span>
-            </div>
-            <div class="project-actions">
-              <button
-                class="case-link"
-                type="button"
-                data-dialog="project-dialog"
-                aria-haspopup="dialog"
-                aria-controls="project-dialog"
-              >
-                Explore the case study <span aria-hidden="true">↗</span>
-              </button>
-              <a
-                class="case-link"
-                href="assets/noah-sorli-bachelor-report-reuseid.pdf"
-                download="Noah-Sorli-Bachelor-Report-ReuseID.pdf"
-              >
-                Download bachelor report <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="project-window" aria-hidden="true">
-            <div class="window-bar">
-              <div class="window-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span>reuse-id / overview</span>
-            </div>
-            <div class="window-body">
-              <div class="bank-card">
-                <span class="bank-label">IDENTITY STATUS</span>
-                <strong>Verified</strong>
-                <div class="identity-mark">ID</div>
-              </div>
-              <div class="flow">
-                <span>User</span>
-                <span class="flow-arrow">→</span>
-                <span>ReuseID</span>
-                <span class="flow-arrow">→</span>
-                <span>Bank</span>
-              </div>
-              <div class="code-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <div class="project-picker" aria-label="Choose a project">
-          <button class="project-card project-card-filled is-selected" type="button" data-project="reuse-id" aria-pressed="true">
-            <span class="project-card-index" aria-hidden="true">01</span>
-            <span class="project-card-title">ReuseID Demo</span>
-            <span class="project-card-type">Bachelor project</span>
-            <span class="sr-only">Select ReuseID Demo</span>
-          </button>
-          <button class="project-card project-card-filled ticket-card" type="button" data-project="telefonhjelp" aria-pressed="false">
-            <span class="project-card-index" aria-hidden="true">02</span>
-            <span class="project-card-title">Telefonhjelp</span>
-            <span class="project-card-type">Support system</span>
-            <span class="sr-only">Select Telefonhjelp</span>
-          </button>
-          <button class="project-card project-card-filled horse-card" type="button" data-project="horsin-around" aria-pressed="false">
-            <span class="project-card-index" aria-hidden="true">03</span>
-            <span class="project-card-title">Horsin' Around</span>
-            <span class="project-card-type">Phaser game</span>
-            <span class="sr-only">Select Horsin' Around</span>
-          </button>
-          <button class="project-card" type="button" data-project="project-four" aria-pressed="false">
-            <span class="sr-only">Select project four</span>
-          </button>
-        </div>
-      </section>
-
-      <section class="experience section" id="experience" aria-labelledby="experience-title">
-        <div class="section-top">
-          <p class="section-index">/ Experience</p>
-          <h2 id="experience-title">Solving real issues when it matters most.</h2>
-        </div>
-
-        <div class="experience-grid">
-          <article class="experience-card">
-            <p class="card-date">2021 — Present</p>
-            <div>
-              <span class="card-kicker">Telenor retail · Connect / Så&amp;Høste</span>
-              <h3>Sales, support &amp;<br />store operations</h3>
-              <p>
-                Technical guidance, consultative sales, problem-solving, and smooth
-                day-to-day operations across several Oslo-area stores.
-              </p>
-              <button
-                class="text-button"
-                type="button"
-                data-dialog="telenor-dialog"
-                aria-haspopup="dialog"
-                aria-controls="telenor-dialog"
-                aria-label="View Telenor experience details"
-              >
-                View details <span aria-hidden="true">+</span>
-              </button>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <p class="card-date">2022 — 2026</p>
-            <div>
-              <span class="card-kicker">OsloMet</span>
-              <h3>BSc Computer Engineering</h3>
-              <p>Software, systems, security, networking, data, and cloud.</p>
-              <button
-                class="text-button"
-                type="button"
-                data-dialog="education-dialog"
-                aria-haspopup="dialog"
-                aria-controls="education-dialog"
-                aria-label="View computer engineering curriculum"
-              >
-                View curriculum <span aria-hidden="true">+</span>
-              </button>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <p class="card-date">2023 + 2024</p>
-            <div>
-              <span class="card-kicker">Student volunteering</span>
-              <h3>OsloMet Fadder</h3>
-              <p>
-                Helped create a welcoming student start. The group won TKD’s best fadder
-                group in 2024.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="work-timeline section" id="work-timeline" aria-labelledby="timeline-title">
-        <div class="section-top">
-          <p class="section-index">/ Work timeline</p>
-          <div>
-            <h2 id="timeline-title">Experience, one<br />chapter at a time.</h2>
-            <p class="timeline-intro">Explore each role, or add the next step in your work experience.</p>
-          </div>
-        </div>
-        <div class="timeline-toolbar">
-          <p id="timeline-count"></p>
-          <button class="button button-primary" type="button" id="add-experience" aria-haspopup="dialog" aria-controls="experience-editor">Add experience <span aria-hidden="true">+</span></button>
-        </div>
-        <p class="timeline-storage-note" id="timeline-storage-note">Changes are saved in this browser. They are not published to other visitors.</p>
-        <ol class="timeline-list" id="timeline-list" aria-label="Work experience, newest first"></ol>
-        <p class="timeline-empty" id="timeline-empty" hidden>Your timeline is ready for its first chapter. Add a role to get started.</p>
-        <p class="sr-only" id="timeline-status" role="status"></p>
-        <noscript><p>Enable JavaScript to explore the timeline and add work experience.</p></noscript>
-      </section>
-
-      <section class="capabilities section" id="toolkit" aria-labelledby="toolkit-title">
-        <div class="section-top">
-          <p class="section-index">/ Toolkit</p>
-          <h2 id="toolkit-title">Five strengths.<br />One practical toolkit.</h2>
-        </div>
-
-        <div class="capability-explorer">
-          <div class="tool-objects">
-            <article class="tool-object">
-              <span>01</span>
-              <h3>Frontend</h3>
-            </article>
-            <article class="tool-object">
-              <span>02</span>
-              <h3>Backend &amp; APIs</h3>
-            </article>
-            <article class="tool-object">
-              <span>03</span>
-              <h3>Cloud &amp; DevOps</h3>
-            </article>
-            <article class="tool-object">
-              <span>04</span>
-              <h3>Security</h3>
-            </article>
-            <article class="tool-object">
-              <span>05</span>
-              <h3>Collaboration</h3>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact" aria-labelledby="contact-title">
-        <p class="section-index">/ Contact</p>
-        <div class="contact-main">
-          <p>Have a role, project, or problem worth solving?</p>
-          <h2 id="contact-title">Let’s build<br /><em>something clear.</em></h2>
-          <a href="mailto:noiapah@protonmail.com">
-            noiapah@proton.me <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <div class="contact-footer">
-          <span>© <span id="year"></span> Noah Cornelius Sørli</span>
-          <nav class="social-links" aria-label="Social profiles">
-            <a href="https://github.com/Noiapah" target="_blank" rel="noreferrer">
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/noah-cornelius-s%C3%B8rli-174543240"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn <span aria-hidden="true">↗</span>
-            </a>
+          <nav class="profile-links" aria-label="Professional profiles">
+            <a href="https://github.com/Noiapah" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/noah-cornelius-s%C3%B8rli-174543240" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
           </nav>
-          <button type="button" class="back-to-top">Back to top ↑</button>
         </div>
+        <aside class="profile-summary" aria-label="Profile at a glance">
+          <p class="eyebrow">At a glance</p>
+          <dl>
+            <div><dt>Engineering foundation</dt><dd>BSc Computer Engineering<span>OsloMet · 2022–2026</span></dd></div>
+            <div><dt>Core stack</dt><dd>Vue &amp; TypeScript<span>Java · Spring Boot · SQL</span></dd></div>
+            <div><dt>Applied experience</dt><dd>Full-stack identity demo<span>Bachelor project for Signicat</span></dd></div>
+            <div><dt>Beyond the code</dt><dd>Customer technology support<span>Telenor retail · 2021–Present</span></dd></div>
+          </dl>
+        </aside>
       </section>
-    </main>
 
+      <div class="cv-layout">
+        <div class="cv-main">
+          <section class="section projects" id="project" aria-labelledby="projects-title">
+            <div class="section-heading"><h2 id="projects-title">Selected projects</h2><span class="section-note">Engineering in practice</span></div>
+            <article class="project-feature project-entry">
+              <div class="entry-top"><p class="entry-kicker">Signicat · Bachelor team project</p><span class="entry-date">2026</span></div>
+              <h3>ReuseID Demo</h3>
+              <p class="entry-summary">A working online-banking demo showing how a verified digital identity can be reused with mobile authentication.</p>
+              <ul class="achievement-list">
+                <li>Connected a Vue interface to Spring Boot APIs and protected banking resources.</li>
+                <li>Delivered as a team from planning and prototyping through automated testing and cloud deployment.</li>
+                <li>Made the identity flow understandable for technical and non-technical stakeholders.</li>
+              </ul>
+              <ul class="tags" aria-label="ReuseID technologies"><li>Vue 3</li><li>TypeScript</li><li>Java / Spring Boot</li><li>Kubernetes</li><li>Google Cloud</li></ul>
+              <div class="entry-links">
+                <button class="text-button" type="button" data-dialog="project-dialog" aria-haspopup="dialog" aria-controls="project-dialog" hidden>Read case study <span aria-hidden="true">↗</span></button>
+                <a href="assets/noah-sorli-bachelor-report-reuseid.pdf" download="Noah-Sorli-Bachelor-Report-ReuseID.pdf">Bachelor report <span class="link-format">PDF</span> <span aria-hidden="true">↓</span></a>
+              </div>
+            </article>
+            <article class="project-entry">
+              <div class="entry-top"><p class="entry-kicker">Personal project · Support application</p><span class="entry-date">2026</span></div>
+              <h3>Telefonhjelp</h3>
+              <p class="entry-summary">A Norwegian-language desktop application for phone-store teams to register, organize, and follow customer support cases.</p>
+              <p class="project-detail">Connects hands-on retail support experience with practical software for managing customer cases and sensitive information.</p>
+              <ul class="tags" aria-label="Telefonhjelp technologies"><li>Vue 3</li><li>TypeScript</li><li>Spring</li><li>SQLite</li></ul>
+              <div class="entry-links">
+                <a href="https://noiapah.github.io/ticket_sys_web_demo/#/" target="_blank" rel="noopener noreferrer">Try web demo <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Noiapah/ticket_sys_demo" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="project-entry compact-project">
+              <div class="entry-top"><p class="entry-kicker">Personal project · Browser game</p><span class="entry-date">2026</span></div>
+              <h3>Horsin’ Around</h3>
+              <p class="entry-summary">A single-player horse game with eight-direction movement, jumping, local progression, and timed racing.</p>
+              <ul class="tags" aria-label="Horsin’ Around technologies"><li>JavaScript</li><li>Phaser 3</li><li>Game systems</li></ul>
+              <div class="entry-links"><a href="https://github.com/Noiapah/horsinaround" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </section>
+
+          <section class="section experience" id="experience" aria-labelledby="experience-title">
+            <span class="anchor-alias" id="work-timeline" aria-hidden="true"></span>
+            <div class="section-heading"><h2 id="experience-title">Work experience</h2><span class="section-note">People &amp; technology</span></div>
+            <ol class="timeline-list" id="timeline-list" aria-label="Work experience, newest first">
+              <li class="timeline-item"><p class="card-date timeline-date">2021 — Present</p><article class="timeline-card"><div class="timeline-heading"><span class="card-kicker">Telenor retail · Connect / Så&amp;Høste</span><h3>Sales, support &amp; store operations</h3></div><div class="timeline-details"><ul class="experience-highlights"><li>Provided technical guidance and consultative sales across several Oslo-area stores.</li><li>Troubleshot devices, connectivity, apps, accounts, SIM cards, and data transfers.</li><li>Handled inventory, ordering, transactions, and customer data with attention to privacy.</li><li>Supported and trained new colleagues and collaborated across stores on complex customer cases.</li></ul></div></article></li>
+            </ol>
+            <p class="timeline-empty" id="timeline-empty" hidden>No work experience entries.</p>
+            <button class="text-button manage-experience" id="manage-experience" type="button" aria-expanded="false" aria-controls="timeline-toolbar" hidden>Edit local copy</button>
+            <div class="timeline-toolbar" id="timeline-toolbar" hidden>
+              <p id="timeline-count"></p>
+              <button class="button" type="button" id="add-experience" aria-haspopup="dialog" aria-controls="experience-editor">Add experience <span aria-hidden="true">+</span></button>
+              <p class="timeline-storage-note" id="timeline-storage-note">Changes are saved in this browser. They are not published to other visitors.</p>
+            </div>
+            <p class="sr-only" id="timeline-status" role="status"></p>
+          </section>
+
+          <section class="section education" id="education" aria-labelledby="education-title">
+            <div class="section-heading"><h2 id="education-title">Education</h2></div>
+            <article class="education-entry">
+              <div class="entry-top"><p class="entry-kicker">OsloMet · Oslo Metropolitan University</p><span class="entry-date">2022–2026</span></div>
+              <h3>BSc Computer Engineering</h3>
+              <p>Software development, algorithms, databases, operating systems, networking, security, and cloud delivery.</p>
+              <button class="text-button" type="button" data-dialog="education-dialog" aria-haspopup="dialog" aria-controls="education-dialog" hidden>View curriculum <span aria-hidden="true">↗</span></button>
+            </article>
+            <article class="volunteer-entry">
+              <div class="entry-top"><h3>Student volunteer · OsloMet Fadder</h3><span class="entry-date">2023 &amp; 2024</span></div>
+              <p>Helped welcome new students. The group won TKD’s best fadder group in 2024.</p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="cv-sidebar">
+          <section class="section skills" id="toolkit" aria-labelledby="toolkit-title">
+            <div class="section-heading"><h2 id="toolkit-title">Technical skills</h2></div>
+            <div class="skill-group"><h3>Frontend</h3><p>Vue 3, TypeScript, JavaScript, Vuex, Vue Router</p></div>
+            <div class="skill-group"><h3>Backend &amp; data</h3><p>Java, Spring Boot, REST APIs, SQL, MySQL, SQLite, Flyway, JUnit</p></div>
+            <div class="skill-group"><h3>Cloud &amp; delivery</h3><p>Docker, Kubernetes, Helm, Google Cloud, GitLab CI/CD</p></div>
+            <div class="skill-group"><h3>Security</h3><p>Authentication, authorization, access control, secure handling of customer data</p></div>
+            <div class="skill-group"><h3>Working with others</h3><p>Scrum, code reviews, stakeholder feedback, technical guidance, colleague training</p></div>
+          </section>
+          <section class="sidebar-note" aria-labelledby="approach-title"><span class="note-mark" aria-hidden="true">↳</span><h2 id="approach-title">A practical perspective.</h2><p>Working directly with customers has taught me to trace a problem, explain it clearly, and make the solution useful to the person using it.</p></section>
+          <section class="sidebar-contact" aria-labelledby="contact-title" id="contact"><h2 id="contact-title">Let’s talk</h2><p>Have a role or project in mind?</p><a href="mailto:noiapah@protonmail.com">noiapah@protonmail.com <span aria-hidden="true">↗</span></a><p class="contact-location">Oslo, Norway</p></section>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer"><span>© <span id="year">2026</span> Noah Cornelius Sørli</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
     <dialog class="detail-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
       <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
       <p class="dialog-kicker">Bachelor project · Signicat · ReuseID</p>
@@ -371,13 +183,13 @@
           <h3>05 · The security lesson</h3>
           <p>
             Authenticating a user is only the first step. The system also verifies that
-            the user has necessary permission & authorization to access resources.
+            the user has necessary permission &amp; authorization to access resources.
           </p>
         </div>
         <div>
           <h3>06 · The outcome</h3>
           <p>
-            The result was a full-stack resuable demo for an external client with practical
+            The result was a full-stack reusable demo for an external client with practical
             experience delivering a secure product from planning and prototyping through
             testing and cloud deployment.
           </p>
@@ -390,42 +202,6 @@
       >
         Download the complete bachelor report <span aria-hidden="true">↓</span>
       </a>
-    </dialog>
-
-    <dialog class="detail-dialog" id="telenor-dialog" aria-labelledby="telenor-dialog-title">
-      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
-      <p class="dialog-kicker">Customer technology · 2021 — Present</p>
-      <h2 id="telenor-dialog-title">Technology, explained person to person.</h2>
-      <div class="dialog-grid">
-        <div>
-          <h3>Customer experience</h3>
-          <p>
-            Identified needs, recommended relevant services, demonstrated products, and
-            handled difficult cases with patience and a solution-first approach.
-          </p>
-        </div>
-        <div>
-          <h3>Technical support</h3>
-          <p>
-            Troubleshot devices, test connectivity and networks, debugged and configured apps, accounts, SIM cards, data transfers,
-            updates, access, and basic security settings.
-          </p>
-        </div>
-        <div>
-          <h3>Operations</h3>
-          <p>
-            Worked with SAP, inventory, ordering, transactions, returns, shift scheduling,
-            recruiting, privacy procedures, and secure customer-data handling.
-          </p>
-        </div>
-        <div>
-          <h3>Team contribution</h3>
-          <p>
-            Supported and trained new colleagues, shared product knowledge, and collaborated
-            across stores to resolve complex customer cases.
-          </p>
-        </div>
-      </div>
     </dialog>
 
     <dialog class="detail-dialog" id="education-dialog" aria-labelledby="education-dialog-title">

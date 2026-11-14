@@ -8,7 +8,7 @@
       company: "Telenor retail · Connect / Så&Høste",
       start: 2021,
       end: null,
-      description: "Technical guidance, consultative sales, problem-solving, and smooth day-to-day operations across several Oslo-area stores.\n\nTroubleshot devices, connectivity, apps, accounts, and basic security settings. Supported and trained new colleagues and collaborated across stores to resolve customer cases.",
+      description: "Provided technical guidance and consultative sales across several Oslo-area stores.\n\nTroubleshot devices, connectivity, apps, accounts, SIM cards, and data transfers.\n\nHandled inventory, ordering, transactions, and customer data with attention to privacy.\n\nSupported and trained new colleagues and collaborated across stores on complex customer cases.",
     },
   ];
   const list = document.getElementById("timeline-list");
@@ -17,6 +17,8 @@
   const fields = form.elements;
   const status = document.getElementById("timeline-status");
   const storageNote = document.getElementById("timeline-storage-note");
+  const manageButton = document.getElementById("manage-experience");
+  const toolbar = document.getElementById("timeline-toolbar");
   let entries = defaultExperience.map((entry) => ({ ...entry }));
   let editingId = null;
   let returnFocus = null;
@@ -61,7 +63,7 @@
     return node;
   }
 
-  function render(expandedId = null) {
+  function render() {
     list.replaceChildren();
     const sorted = [...entries].sort((a, b) =>
       Number(b.end === null) - Number(a.end === null) || b.start - a.start || (b.end ?? 9999) - (a.end ?? 9999)
@@ -69,17 +71,17 @@
     sorted.forEach((entry) => {
       const item = element("li", "timeline-item");
       const date = element("p", "card-date timeline-date", `${entry.start} — ${entry.end ?? "Present"}`);
-      const details = element("details", "timeline-card");
-      details.open = entry.id === expandedId;
-      const summary = element("summary", "timeline-summary");
+      const details = element("article", "timeline-card");
       const heading = element("div", "timeline-heading");
       heading.append(element("span", "card-kicker", entry.company), element("h3", "", entry.role));
-      if (entry.end === null) heading.append(element("span", "timeline-current", "Current role"));
-      const toggle = element("span", "timeline-toggle");
-      toggle.setAttribute("aria-hidden", "true");
-      summary.append(heading, toggle);
       const body = element("div", "timeline-details");
-      body.append(element("p", "timeline-description", entry.description || "No additional details yet."));
+      if (entry.description.trim()) {
+        const highlights = element("ul", "experience-highlights");
+        entry.description.split(/\n+/).filter((line) => line.trim()).forEach((line) => {
+          highlights.append(element("li", "", line.trim()));
+        });
+        body.append(highlights);
+      }
       const actions = element("div", "timeline-entry-actions");
       const edit = element("button", "text-button", "Edit experience");
       edit.type = "button";
@@ -97,7 +99,7 @@
       });
       actions.append(edit, remove);
       body.append(actions);
-      details.append(summary, body);
+      details.append(heading, body);
       item.append(date, details);
       list.append(item);
     });
@@ -137,6 +139,14 @@
   }
 
   fields.current.addEventListener("change", updateDates);
+  manageButton.hidden = false;
+  manageButton.addEventListener("click", () => {
+    const editing = manageButton.getAttribute("aria-expanded") !== "true";
+    manageButton.setAttribute("aria-expanded", String(editing));
+    manageButton.textContent = editing ? "Done editing" : "Edit local copy";
+    toolbar.hidden = !editing;
+    document.body.classList.toggle("editing-experience", editing);
+  });
   fields.start.addEventListener("input", updateDates);
   fields.end.addEventListener("input", updateDates);
   [fields.role, fields.company].forEach((field) => field.addEventListener("input", () => field.setCustomValidity("")));
@@ -165,7 +175,7 @@
     if (editingId) entries = entries.map((item) => item.id === editingId ? entry : item);
     else entries.push(entry);
     persist(editingId ? "Experience updated." : "Experience added.");
-    render(entry.id);
+    render();
     dialog.close();
   });
 

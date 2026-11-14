@@ -41,11 +41,9 @@ Edit `defaultExperience` in `timeline.js` to publish work experience. Keep the s
 `#timeline-list` in `index.html` in sync so visitors without JavaScript see the same CV.
 Each non-empty line in an entry's description becomes a responsibility bullet.
 
-**Edit local copy** reveals the Add, Edit, and Remove experience controls. Changes are
-saved only in that browser under `ncs-work-experience-v1`; they are not published.
-Existing saved entries remain compatible. Clear that local-storage key to restore the
-published defaults. The editor reports when storage cannot be loaded or saved.
-Editing controls are excluded from printing.
+Work experience is read-only on the page. Update the source files above to change it.
+Previously saved browser-local entries under `ncs-work-experience-v1` remain compatible;
+clear that local-storage key to restore the published defaults.
 
 The PDF is linked in both the ReuseID summary and its case-study dialog. Update both
 links if the asset is renamed. No separate CV PDF needs to be maintained: printing

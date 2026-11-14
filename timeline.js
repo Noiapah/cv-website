@@ -17,8 +17,6 @@
   const fields = form.elements;
   const status = document.getElementById("timeline-status");
   const storageNote = document.getElementById("timeline-storage-note");
-  const manageButton = document.getElementById("manage-experience");
-  const toolbar = document.getElementById("timeline-toolbar");
   let entries = defaultExperience.map((entry) => ({ ...entry }));
   let editingId = null;
   let returnFocus = null;
@@ -139,14 +137,6 @@
   }
 
   fields.current.addEventListener("change", updateDates);
-  manageButton.hidden = false;
-  manageButton.addEventListener("click", () => {
-    const editing = manageButton.getAttribute("aria-expanded") !== "true";
-    manageButton.setAttribute("aria-expanded", String(editing));
-    manageButton.textContent = editing ? "Done editing" : "Edit local copy";
-    toolbar.hidden = !editing;
-    document.body.classList.toggle("editing-experience", editing);
-  });
   fields.start.addEventListener("input", updateDates);
   fields.end.addEventListener("input", updateDates);
   [fields.role, fields.company].forEach((field) => field.addEventListener("input", () => field.setCustomValidity("")));

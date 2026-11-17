@@ -17,6 +17,7 @@ work experience, education, and specific technical skills.
   there to export the CV; the bachelor report is a separate document.
 - Responsive layouts, keyboard focus styles, reduced-motion support, and a readable
   static CV when JavaScript is unavailable.
+- A shorter mobile introduction and technical skills before work experience and education.
 
 ## Run locally
 
@@ -34,20 +35,17 @@ Then open [http://localhost:8000](http://localhost:8000).
 - `index.html`: profile, all three projects, skills, education, links, and dialog content.
 - `styles.css`: visual design, responsive layouts, dialogs, and print formatting.
 - `script.js`: dialogs, focus return, print action, and footer year.
-- `timeline.js`: published work entries and the browser-local experience editor.
 - `assets/`: bachelor report and other static assets.
 
-Edit `defaultExperience` in `timeline.js` to publish work experience. Keep the static
-`#timeline-list` in `index.html` in sync so visitors without JavaScript see the same CV.
-Each non-empty line in an entry's description becomes a responsibility bullet.
-
-Work experience is read-only on the page. Update the source files above to change it.
-Previously saved browser-local entries under `ncs-work-experience-v1` remain compatible;
-clear that local-storage key to restore the published defaults.
+Edit `#timeline-list` in `index.html` to publish work experience. The same content is
+shown with or without JavaScript. The page no longer reads browser-local experience;
+previously saved edits cannot replace or hide the published CV.
 
 The PDF is linked in both the ReuseID summary and its case-study dialog. Update both
-links if the asset is renamed. No separate CV PDF needs to be maintained: printing
-uses the current page content, including locally edited experience.
+links and file-size labels if the asset is replaced. The report uses compressed images
+at their original dimensions, preserving its selectable text, links, and bookmarks.
+No separate CV PDF needs to be maintained: printing
+uses the current published page content.
 
 ## Deployment
 

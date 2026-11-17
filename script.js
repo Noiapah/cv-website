@@ -22,7 +22,7 @@ dialogs.forEach((dialog) => {
   });
   dialog.addEventListener("close", () => {
     document.body.classList.remove("dialog-open");
-    if (dialog.id !== "experience-editor") dialogTrigger?.focus({ preventScroll: true });
+    dialogTrigger?.focus({ preventScroll: true });
   });
 });
 
